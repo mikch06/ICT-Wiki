@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CentOS 8: Operations</title>
+</head>
+<body>
+
+								<div itemprop="articleBody">
+		<p>Restart Networking</p>
+<pre class="language-markup"><code>systemctl stop NetworkManager.service
+systemctl start NetworkManager.service
+
+OR:
+
+nmcli networking off
+nmcli networking on
+
+-&gt;
+nmcli n off
+nmcli n on</code></pre> 	</div>
+</body>
+</html>
