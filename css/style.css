@@ -8,10 +8,22 @@ h1,h2,h3,h4,h5,h6   {
 color: #09c;
 }
 
+a:link, a:visited  {
+text-decoration: none;
+text-color: 09c;
+}
 
 pre {
   display: block;
   font-family: monospace;
   white-space: pre;
   margin: 1em 0;
+}
+
+.result-title   {
+color: #09c;
+}
+.result-preview  {
+max-width: 200px;
+background-color: red;
 }
