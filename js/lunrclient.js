@@ -27,7 +27,7 @@ function parseLunrResults(results) {
         var title = item["t"];
         var preview = item["p"];
         var link = item["l"];
-        var result = ('<p><span class="result-title"><a href="' + link + '">'
+        var result = ('<p><span class="result-title"><a href="' + link + '" target="_blank">'
                     + title + '</a></span><br><span class="result-preview">'
                     + preview + '</span></p>');
         html.push(result);
