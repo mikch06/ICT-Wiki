@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CentOS8: Operations</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h2>CentOS8: Operations</h2>
+    <div class="published">&#128198; published: 17.08.2020</div>
+    <div class="modified">&#128198; modified: 17.08.2020</div>
+    <div class="tags">&#128204; centos, linux</div>
+    <hr>
+
+    <h3>Restart Networking:</h3>
+    <pre>systemctl stop NetworkManager.service
+systemctl start NetworkManager.service
+
+OR:
+
+nmcli networking off
+nmcli networking on
+
+->
+nmcli n off
+nmcli n on
+    </pre>
+</body>
+</html>
