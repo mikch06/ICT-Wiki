@@ -41,4 +41,4 @@ To see the search index in action:
 3. Open search.html in your browser and enter a search term like `cat` or `mango`.
 
 ###
-Lunr implementation by: https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites
+Lunr implementation by: n
