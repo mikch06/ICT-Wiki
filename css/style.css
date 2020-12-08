@@ -16,6 +16,7 @@ a, a:link, a:visited, a:hover, a:active  {
 text-decoration: none;
 color: #09c;
 }
+
 dd,dt   {
 line-height: 1.6;
 }
@@ -29,6 +30,13 @@ color: #aaa;
 line-height: 1.6;
 font-style: italic;
 color: #aaa;
+}
+
+q   {
+border-left: 3px solid red; 
+padding-left: 2px;
+font-style: italic;
+font-size: 26px;
 }
 
 pre {

@@ -1,5 +1,18 @@
 ICT wiki
 
+Static ICT wiki based on simple html pages with a template.
+
+Using search indexing with lunrjs.com and a great online help from
+https://ble-lter.github.io/Lunr-Index-and-Search-for-Static-Sites
+
+# Search Install
+1. Install Node.js
+2. npm install lunr
+3. npm install cheerio
+
+
+
+
 
 
 
