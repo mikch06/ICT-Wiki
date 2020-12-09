@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Remove old kernels</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>Remove old kernels</h2>
+    <div class="published">&#128198; published: 24.03.2020</div>
+    <div class="modified">&#128198; modified: 07.10.2020</div>
+    <div class="tags">&#128204; centos, linux</div>
     <hr>
 
-    Template Text
+    Current running kernel
 
-    <pre>Codeblock
+    <pre>uname -an
     </pre>
+    Show installed kernels:
+    <pre>rpm -q kernel</pre>
+<br>
+    <b>CentOS 7:</b> Remove old kernels with package-cleanup (yum-utils required)
+    <pre>package-cleanup --oldkernels package-cleanup --oldkernels --count=2</pre>
 
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    <b>CentOS 8:</b> Remove old kernels with dnf
+    <pre>
+dnf remove --oldinstallonly
+dnf remove --oldinstallonly --setopt installonly_limit=2</pre>
 </body>
 </html>
