@@ -3,24 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>CentOS Filesystem operations (rescan, create, resize, xfs)</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>CentOS Filesystem operations (rescan, create, resize, xfs)</h2>
+    <div class="published">&#128198; published: 02.07.2020</div>
+    <div class="modified">&#128198; modified: 08.07.2020</div>
+    <div class="tags">&#128204; logical volume, lvresize, xfs, lvm, physical volume, pvresize, xfs_growfs </div>
     <hr>
+    <h3>Disks</h3>
+    Rescan existing disks:
+    <pre>echo 1 > /sys/class/scsi_device/1\:0\:1\:0/device/rescan</pre>
+    Check new disk:
+    <pre>fdisk -l /dev/sdb</pre>
+    <h3>Volumes</h3>
+    <p>Physical / Logical Volumes</p>
+    Create physical volume
+    <pre>pvcreate /dev/sda3
+        Physical volume "/dev/sda3" successfully created.</pre>
+    Resize physical volume (e.g. extended in VMware)   
+    <pre>pvresize /dev/sdb</pre>
+    <pre>pvdisplay</pre>
+    Extend physical volume group 
+    <pre>vgextend centos /dev/sda3
+        Volume group "centos" successfully extended​</pre>
+    <pre>vgdisplay</pre>
+    Extend logical volume<br>
+    in G'igs
+    <pre>lvextend -L +8G /dev/system/volume</pre>
+    or full (using everything)
+    <pre>lvextend -l 100%FREE /dev/mapper/volume</pre>
+    Grow filesystem
+    <pre>xfs_growfs /dev/system/volume</pre>
+    Create new logical volume
+    <pre>mkfs.xfs /dev/centos/volume</pre>
+    see: <a href="centos-new-partition-on-existing-disk.html">CentOS New Partition on existing disk</a>
 
-    Template Text
 
-    <pre>Codeblock
-    </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
 </body>
 </html>

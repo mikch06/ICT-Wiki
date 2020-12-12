@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CentOS8: nmcli examples</title>
+    <title>Disable ipv6 on CentOS8</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>CentOS8: nmcli examples</h2>
+    <h2>Disable ipv6 on CentOS8</h2>
     <div class="published">&#128198; published: 03.06.2020</div>
     <div class="modified">&#128198; modified: 03.06.2020</div>
-    <div class="tags">&#128204; centos, linux, networking, nmcli</div>
+    <div class="tags">&#128204; centos, linux, ipv6</div>
     <hr>
 
-    Config ip address on interface:
-    <pre>nmcli connection modify enp1s0 IPv4.address 192.168.22.11
-</pre>
+    Disable ipv6 on CentOS8:
+<pre># vi /etc/sysctl.conf
 
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+
+sysctl -p
+</pre>
 </body>
 </html>

@@ -3,24 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>CentOS Cryptsetup luks / dm_crypt</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>CentOS Cryptsetup luks / dm_crypt</h2>
+    <div class="published">&#128198; published: 07.07.2020</div>
+    <div class="modified">&#128198; modified: 08.07.2020</div>
+    <div class="tags">&#128204; xfs_growfs, lvextend, cryptsetup, luks, dm_crypt</div>
     <hr>
 
-    Template Text
+    Preparation:
+    <pre>yum -y install cryptsetup
 
-    <pre>Codeblock
+modprobe dm_crypt
+(enables crypt)
+
+lsmod |grep dm_crypt
+dm_crypt               27346  0
+dm_mod                124461  11 dm_log,dm_mirror,dm_crypt
+(checks crypt enabling)
+</pre>
+Cryptsetup:
+<pre>pvcreate /dev/sdb
+    Physical volume "/dev/sdb" successfully created.
+
+vgextend centos /dev/sdb
+    Volume group "system" successfully extended
+
+lvcreate -n lv_encrypted -L 10G system
+    Logical volume "lv_encrypted" created.</pre>
+Cryptdevice:
+<pre>
+cryptsetup luksFormat /dev/system/lv_encrypted
+
+cryptsetup luksOpen /dev/system/lv_encrypted encrypted
+    
+mkfs.xfs /dev/mapper/encrypted
+    
+mkdir /encrypted
+    
+mount /dev/mapper/encrypted /encrypted
+    
+# lsblk
+NAME                    MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+sda                       8:0    0   10G  0 disk
+├─sda1                    8:1    0  512M  0 part  /boot
+└─sda2                    8:2    0  9.5G  0 part
+    ├─system-root         253:0    0  7.5G  0 lvm   /
+    ├─system-swap         253:1    0    2G  0 lvm   [SWAP]
+    └─system-lv_encrypted 253:2    0   10G  0 lvm
+    └─encrypted         253:3    0   10G  0 crypt /encrypted
+sdb                       8:16   0   10G  0 disk
+└─system-lv_encrypted   253:2    0   10G  0 lvm
+    └─encrypted           253:3    0   10G  0 crypt /encrypted
+sr0      
+</pre>
+Increase encrypted device:<br>
+(close & unmount before)
+<pre>cryptsetup close encrypted
+    umount /encrypted
     </pre>
+extend:
+<pre>lvextend -L +1GB /dev/system/lv_encrypted
+cryptsetup resize /dev/mapper/encrypted
+xfs_growfs /encrypted/</pre>
 
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
 </body>
 </html>

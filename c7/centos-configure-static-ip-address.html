@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Configure static IP address</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>Configure static IP address</h2>
+    <div class="published">&#128198; published: 09.09.2015</div>
+    <div class="modified">&#128198; modified: 08.05.2020</div>
+    <div class="tags">&#128204; centos, linux, ip, addr</div>
     <hr>
 
-    Template Text
+    Position of the interface configuration files:
 
-    <pre>Codeblock
-    </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    <pre>/etc/sysconfig/network-scripts</pre>
+    <pre>ip addr</pre>
+    shows the names of available interfaces:
+    <pre>enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc
+pfifo_fast state UP qlen 1000
+link/ether 08:00:27:66:c7:99 brd ff:ff:ff:ff:ff:ff
+inet 192.168.0.40/24 brd 192.168.0.255 scope global enp0s3
+valid_lft forever preferred_lft forever
+inet6 fe80::a00:27ff:fe66:c799/64 scope link
+valid_lft forever preferred_lft forever</pre>
+Now the config file ifcfg-enp0s3 can be edited with the static config:
+    <pre>TYPE="Ethernet"   
+NAME="enp0s3"
+ONBOOT="yes"
+IPADDR="192.168.0.40"  
+BOOTPROTO="static" 
+GATEWAY="192.168.0.1"</pre>         
 </body>
 </html>
