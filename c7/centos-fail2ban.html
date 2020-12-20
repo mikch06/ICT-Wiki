@@ -3,24 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>fail2ban</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>fail2ban</h2>
+    <div class="published">&#128198; published: 03.12.2010</div>
+    <div class="modified">&#128198; modified: 23.07.2020</div>
+    <div class="tags">&#128204; CentOS, fail2ban</div>
     <hr>
 
-    Template Text
+    CentOS Linux fail2ban
 
-    <pre>Codeblock
-    </pre>
+    On exposed systems to the internet fail2ban is used to avoid attacks e.g. on ssh deamon. 
+    This shows the install and config on the CentOS 7.2 release with using firewalld (preinstalled). 
+    First install fail2ban from repo:
+    <pre>yum -y install fail2ban</pre>
+    For own settings the main config ‘jail.conf’ could be copied.
+    <pre>cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local</pre>
+    Now you can edit ‘jail.local’ with your own fonfigurations.
 
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    <pre>[sshd] #--> uncommend to activate fail2ban for sshd
+enabled = true #--> use firewalld not iptables
+ignoreip = 192.168.2.0 #--> fail2ban ignores these ip's
+destemail =  e-mail@address.ch #--> fail2ban sends ban informations to this address
+sendername = Fail2Ban - hostname #--> hostinfos in e-mail
+usedns = no #--> don't resolve dns names</pre>
+Now you can enable and start the fail2ban deamon:
+<pre>systemctl enable fail2ban
+systemctl start fail2ban</pre>
+
+To status of fail2ban and banned ip’s use:
+<pre>fail2ban-client status sshd
+Status for the jail: sshd
+|- Filter
+|  |- Currently failed: 0
+|  |- Total failed:     37
+|  `- File list:        /var/log/secure
+`- Actions
+        |- Currently banned: 0
+        |- Total banned:     4
+        `- Banned IP list:</pre>
+
+<h3>Links:</h3>
+<a href="http://www.fail2ban.org" target="_blank">http://www.fail2ban.org</a>
+
+
 </body>
 </html>
