@@ -3,24 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
+    <title>CentOS Postfix Configuration</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>CentOS Postfix Configuration</h2>
+    <div class="published">&#128198; published: 22.04.2017</div>
+    <div class="modified">&#128198; modified: 04.05.2020</div>
+    <div class="tags">&#128204; centos, linux, postfix</div>
     <hr>
 
-    Template Text
-
-    <pre>Codeblock
-    </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    Scenario: Homeserver should send e-mails by your ISP-hosted domain:
+<br>
+    Packages:
+    <pre>yum -y install postfix</pre>
+    Edit the following lines in the postfix main config:<br><br>
+    /etc/postfix/main.cf
+    <pre>mydomain = "MY-DOMAIN"
+myorigin = $myhostname
+myorigin = $mydomain
+inet_interfaces = all
+inet_interfaces = localhost
+inet_protocols = ipv4
+mydestination = $myhostname, localhost.$mydomain, localhost
+mynetworks_style = host
+relayhost = <STMP.HOST.ADDRESS>:<PORT>
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_path = smtpd
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_sasl_type = cyrus
+smtp_sasl_auth_enable = yes
+smtp_sasl_security_options = noanonymous</pre>
 </body>
 </html>
