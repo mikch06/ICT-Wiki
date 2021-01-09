@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Joomla! Include own files</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>Joomla! Include own files</h2>
+    <div class="published">&#128198; published: 24.09.2015</div>
+    <div class="modified">&#128198; modified: 10.07.2020</div>
+    <div class="tags">&#128204; Joomla, files, include</div>
     <hr>
 
-    Template Text
+    Put the following code to the own Joomla files to integrate them to the CMS. After that you can include them by a wrapper.
 
-    <pre>Codeblock
+    <pre>php
+    define( '_JEXEC', 1);
+    define('JPATH_BASE', dirname(__FILE__).'/..' );
+    //this is when we are in the root
+    define( 'DS', DIRECTORY_SEPARATOR );
+
+    require_once ( JPATH_BASE .DS.'includes'.DS.'defines.php' );
+    require_once ( JPATH_BASE .DS.'includes'.DS.'framework.php' );
+
+    $mainframe =& JFactory::getApplication('site');
+    $mainframe->initialise();
+    $user = JFactory::getUser();
+
+    echo  $user->username;
+    ?>"
     </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    In case of the position of the file you have to edit the 'dirname'.
 </body>
 </html>
