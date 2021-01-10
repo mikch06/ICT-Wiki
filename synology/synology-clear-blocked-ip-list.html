@@ -3,24 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>How to clear blocked IP list</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>How to clear blocked IP list</h2>
+    <div class="published">&#128198; published: 03.09.2015</div>
+    <div class="modified">&#128198; modified: </div>
+    <div class="tags">&#128204; Synology, IP block</div>
     <hr>
 
-    Template Text
-
-    <pre>Codeblock
-    </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    Login to your NAS by ssh<br><br>
+    May take a backup from the autoblock databse:
+    <pre>cp /etc/synoautoblock.db
+/etc/synoautoblock.db.bak</pre>
+    Change to database sqlite mode:
+    <pre>sqlite3 "Enter"</pre>
+    open the database:
+    <pre>sqlite> .open /etc/synoautoblock.db</pre>
+    Show tables:
+    <pre>sqlite> .tables</pre>
+    –&gt; AutoBlockIP
+    <br><br>
+    Show all entries:
+    <pre>sqlite> select * from AutoBlockIP;</pre>
+    Delete all entries from database:    
+    <pre>sqlite> delete from AutoBlockIP;</pre>
+    Show all entries again:
+    <pre>sqlite> select * from AutoBlockIP;</pre>
+    Delete a single entry:
+    <pre>sqlite> delete from AutoBlockIP where IP = "192.168.2.12";</pre>
+    Leave sqlite
 </body>
 </html>

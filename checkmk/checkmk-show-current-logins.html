@@ -3,24 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Checkmk: Show current logins</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>Checkmk: Show current logins</h2>
+    <div class="published">&#128198; published: 16.06.2020</div>
+    <div class="modified">&#128198; modified: </div>
+    <div class="tags">&#128204; checkmk, plugins</div>
     <hr>
 
-    Template Text
 
-    <pre>Codeblock
-    </pre>
+    <pre>#!/bin/bash
+# Check who's online
+# mki, 2020.06.16
 
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+SERVICE="Current_Logins"
+WHO=$( who |awk {' printf "%s ", $1'} )
+CHECK=$( who |wc -l)
+
+if [ $CHECK == 0 ]
+then
+    STATUS="0"
+elif [ ! -z $CHECK ]
+then
+    STATUS="1"
+fi
+
+echo "$STATUS $SERVICE count=$CHECK $CHECK Logged in: $WHO "
+</pre>
 </body>
 </html>

@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Nextcloud calendar SQL commands</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>Nextcloud calendar SQL commands</h2>
+    <div class="published">&#128198; published: 09.03.2020</div>
+    <div class="modified">&#128198; modified:</div>
+    <div class="tags">&#128204; Nextcloud</div>
     <hr>
 
-    Template Text
-
-    <pre>Codeblock
-    </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    Nextcloud: Use Nextcloud with SQL commands<br><br>
+    Nextcloud calendar:<br><br>
+    Select all calendar events older than ...
+    <pre>SELECT * FROM `oc_calendarobjects` WHERE calendarid = 2 AND lastoccurence >= 1583323200</pre>
+    - calendarid -> e.g. your birthday calendar<br>
+    - lastoccurence -> timestamp in unixtime
 </body>
 </html>

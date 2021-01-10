@@ -4,23 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <div class="published">&#128198; published: 06.01.2018</div>
+    <div class="modified">&#128198; modified:0</div>
+    <div class="tags">&#128204; Synology</div>
     <hr>
 
-    Template Text
-
-    <pre>Codeblock
-    </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    Is it possible to change certificates for the file stations and synology ui by shell?<br><br>
+    Yes, it is.<br><br>
+    You can find and replace the certs here:
+    <pre>/usr/syno/etc/certificate/system/default</pre>
+    After editing the certificates you can use the syno-cli to manipulate the services:<br><br>
+    Work with the root user (careful):
+    <pre># synoservice </pre>
+    you'll get the help and see --status
+    <pre># synoservice --status</pre>
+    Now you have all syno services listed.<br><br>
+    For restarting the webserver (nginx) you can restart the nginx service which you find in the status list:
+    <pre>=======================================
+Service [nginx] status=[enable]
+required upstart job:
+    [nginx] is start.
+=======================================</pre>
+        Use the synoservicectl tool to restart the service:
+        <pre># synoservicectl --restart nginx</pre>
 </body>
 </html>

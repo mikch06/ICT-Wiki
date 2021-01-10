@@ -3,24 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Init7 - Hybrid7 connection with Opnsense Firewall</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>Init7 - Hybrid7 connection with Opnsense Firewall</h2>
+    <div class="published">&#128198; published: 17.07.2020</div>
+    <div class="modified">&#128198; modified: 7.07.2020</div>
+    <div class="tags">&#128204; Init7, Hybrid7</div>
     <hr>
 
-    Template Text
+    If you're using <a href="https://www.init7.net">Init7</a> - Hybrid7 you have to configure pppoe Authentication and VLAN tagging:<br><br>
+    <b>Opnsense config step by step:</b>
+    <br><br>
+    1) VLAN (11) Interface creation:<br><br>
+    Interfaces → Other Types → VLAN<br><br>
+    <img src="../images/hybrid7_vlan.png"><br><br>
+    2) Interface Assignment:<br>
+    Interfaces → Assignments
+    <img src="../images/hybrid7_interfaces.png"><br><br>
+    3) Assign new Interface to WAN:<br>
+    <img src="../images/hybrid7_wan.png"><br>
+    <br>
+    4) Configure WAN Interface:<br>
+    Interfaces → [WAN]
+    <img src="../images/hybrid7_wanconfig.png"><br>
+    <img src="../images/hybrid7_advancedoptions.png"><br>
+    (rest is equal)
+    <br><br>
+    5) Finally check if you are "up":
+    <img src="../images/hybrid7_overview.png"><br>
 
-    <pre>Codeblock
-    </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
 </body>
 </html>

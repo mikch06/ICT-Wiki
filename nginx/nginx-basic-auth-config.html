@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Nginx Basic Auth config</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>Nginx Basic Auth config</h2>
+    <div class="published">&#128198; published: 05.04.2020</div>
+    <div class="modified">&#128198; modified: 03.06.2020</div>
+    <div class="tags">&#128204; nginx, Basic Auth, Linux</div>
     <hr>
 
-    Template Text
+    Configure location:
+    <pre>location / {
+        auth_basic "closed site";
+        auth_basic_user_file htpasswd;
+        }</pre>
 
-    <pre>Codeblock
-    </pre>
+    Create password file:
+    <pre>yum install httpd-tools</pre>
+    New file:
+    <pre>htpasswd -c htpasswd-file "username"</pre>
+    New password:<br>
+    Append user to existing file:
+    <pre>htpasswd htpasswd-file "username"</pre>
 
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
 </body>
 </html>
