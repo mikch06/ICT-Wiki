@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Lenovo Thinkpad Trackpoint Scrolling on Linux (debian derivatives)</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>Lenovo Thinkpad Trackpoint Scrolling on Linux (debian derivatives)</h2>
+    <div class="published">&#128198; published: 22.07.2016</div>
+    <div class="modified">&#128198; modified: </div>
+    <div class="tags">&#128204; Lenovo, Thinkpad, Trackpoint, Scrolling</div>
     <hr>
 
-    Template Text
-
-    <pre>Codeblock
-    </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    How to configure Linux to use Trackpoint Scrolling on Lenovo Thinkpads:
+    <br><br>
+    Just create a file '20-thinkpad.conf'
+    <pre>in /usr/share/X11/xorg.conf.d/</pre>
+    <br>
+    with content:
+    <pre>Section "InputClass"
+        Identifier "Trackpoint Wheel Emulation"
+        MatchProduct       "TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc.<br>
+        Composite TouchPad / TrackPoint|ThinkPad USB Keyboard with TrackPoint|ThinkPad<br>  Compact USB Keyboard with TrackPoint|USB Trackpoint pointing device"
+        MatchDevicePath    "/dev/input/event*"
+        Option             "EmulateWheel"          "true"
+        Option             "EmulateWheelButton"    "2"
+        Option             "Emulate3Buttons"       "true"
+        Option             "XAxisMapping"          "6 7"
+        Option             "YAxisMapping"          "4 5"
+    EndSection</pre>
+    <pre>restart mdm (for LinuxMint Cinnamon) or reboot.</pre>
 </body>
 </html>

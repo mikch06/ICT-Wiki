@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Systemd</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>Systemd</h2>
+    <div class="published">&#128198; published: 11.01.2017</div>
+    <div class="modified">&#128198; modified:</div>
+    <div class="tags">&#128204; linux, systemd, systemctl</div>
     <hr>
 
-    Template Text
-
-    <pre>Codeblock
-    </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    Helps for system administration with systemd:<br>
+    Control and manipulate services
+    <pre>systemctl
+systemctl enable [servicename]
+systemctl stop/start [servicename]
+systemctl disable [servicename]
+</pre>
+Remove services from systemd
+<pre>systemctl stop [servicename]
+systemctl disable [servicename]
+rm /etc/systemd/system/[servicename]
+systemctl daemon-reload
+systemctl reset-failed</pre>
 </body>
 </html>

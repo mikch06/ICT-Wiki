@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Linux Desktop with Apple Keyboard</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>Linux Desktop with Apple Keyboard</h2>
+    <div class="published">&#128198; published: 01.01.2015</div>
+    <div class="modified">&#128198; modified: 27.04.2020</div>
+    <div class="tags">&#128204;</div>
     <hr>
 
-    Template Text
+    I like to have < > ° etc. in a correct way of use on my keyboard. <br><br>
+    Usage:<br>
+    - temoporary setting:
+    <pre>vi /sys/module/hid_apple/parameters/iso_layout
+1 -> 0</pre>
+    - permanent setting:<br>
+    <pre>vi /etc/modprobe.d/hid_apple.conf
+options hid_apple iso_layout=0</pre>
 
-    <pre>Codeblock
-    </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    Update initramfs bootfile:
+    <pre>update-initframs</pre>
 </body>
 </html>

@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Linux OpenSSL commands</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <h2>Linux OpenSSL commands</h2>
+    <div class="published">&#128198; published: 11.02.2017</div>
+    <div class="modified">&#128198; modified:</div>
+    <div class="tags">&#128204; openssl, cert, key</div>
     <hr>
+    Check a certificate
 
-    Template Text
-
-    <pre>Codeblock
-    </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
+    <pre>openssl x509 -in server.crt -text -noout</pre>
+    Check a key
+    
+    <pre>openssl rsa -in server.key -check</pre>
+    Check a CSR
+    <pre>openssl req -text -noout -verify -in server.csr</pre>
+    Verify a certificate and key matches
+    <pre>openssl x509 -noout -modulus -in server.crt| openssl md5<br>
+openssl rsa -noout -modulus -in server.key| openssl md5</pre>
+    Create a self signed cert & private key<br><br>
+    - valid: 1y<br>
+- key: 2048 bit
+    
+    <pre>openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout selfsigned.key -out selfsigned.crt</pre>
 </body>
 </html>
