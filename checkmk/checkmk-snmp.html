@@ -8,19 +8,17 @@
 </head>
 <body>
     <h2>Title</h2>
-    <div class="published">&#128198; published: 24.12.2020</div>
-    <div class="modified">&#128198; modified: 26.12.2020</div>
-    <div class="tags">&#128204; centos, linux, ict</div>
+    <div class="published">&#128198; published: 28.04.2021</div>
+    <div class="modified">&#128198; modified: </div>
+    <div class="tags">&#128204; Checkmk</div>
     <hr>
 
-    Template Text
+    Commands to debug snmp monitoring with Checkkmk
 
-    <pre>Codeblock
+    <pre>
+    cmk --debug -D hostname
+    cmk --debug -vvn hostname
+    cmk --check -Ivv hostname
     </pre>
-
-    <p>To give a user rights on a root privileged command:</p>
-    <pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
-    <p>Now the user could restart the httpd deamon:</p>
-    <pre>sudo systemctl restart httpd</pre>
 </body>
 </html>
