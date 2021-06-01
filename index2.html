@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICT - Wiki</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="https://unpkg.com/lunr/lunr.js"></script>
+	<script src="js/search.js"></script>
+</head>
+<body>
+<!--<a href="."><h1>ICT - Wiki</h1></a>-->
+<a href="index2.html"><h1>ICT - Wiki</h1></a>
+
+
+<form id="search" action="search.html" method="get">
+<label hidden for="search-input">Search site</label>
+<input type="text" id="search-input" name="q" placeholder="Type here to search">
+<input type="submit" value="search">
+</form>
+
+		<div class="loading" id="loading-div">
+			<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+		</div>
+		<div class="resultCount" id="resultCount"></div>
+		<div id="results"></div>
+
+
+
+
+<!--
+
+	<form id="lunrSearchForm" name="lunrSearchForm">
+		<input class="search-input" name="q" placeholder="Enter search term" type="text"> <input type="submit" value="Search">
+	</form>
+		<div class="loading" id="loading-div">
+			<i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+		</div>
+		<div class="resultCount" id="resultCount"></div>
+		<div id="searchResults"></div>
+-->
+
+
+<h2>Content</h2>
+	<dl>
+		<br>
+		<dt>CentOS7</dt>
+		<dd><a href="c8/centos7-to-centos8-in-place-upgrade.html" target="_blank">CentOS8 in place Upgrade</a></dd>
+		<dd><a href="c7/centos-new-partition-on-existing-disk.html" target="_blank">New Partition on existing disk</a></dd>
+		<dd><a href="c7/centos-remove-old-kernels.html" target="_blank">Remove old kernels</a></dd>
+		<dd><a href="c7/centos-sudoers.html" target="_blank">CentOS7 - Sudoers</a></dd>
+		<dd><a href="c7/centos-configure-static-ip-address.html" target="_blank">Configure static IP address</a></dd>
+		<dd><a href="c7/centos-filesystem-operations.html" target="_blank">CentOS - Filesystem operations (rescan, create, resize, xfs)</a></dd>
+		<dd><a href="c7/centos-cryptsetup-luks.html" target="_blank">CentOS - Cryptsetup luks / dm_crypt</a></dd>
+		<dd><a href="c7/centos-disable-root-login.html" target="_blank">CentOS - disable root login</a></dd>
+		<dd><a href="c7/centos-locale-status.html" target="_blank">CentOS - locale status</a></dd>
+		<dd><a href="c7/centos-postfix-configuration.html" target="_blank">CentOS - Postfix configuration</a></dd>
+		<dd><a href="c7/centos-mount-nfs-share.html" target="_blank">Mount nfs Share</a></dd>
+		<dd><a href="c7/centos-hostname.html" target="_blank">Hostname</a></dd>
+		<dd><a href="c7/centos-fail2ban.html" target="_blank">fail2ban</a></dd>
+
+
+
+
+		<!-- <dd><a href="url" target="_blank">CentOS - foo</a></dd> -->
+
+
+
+
+<!--		<dd><a href="template.html" target="_blank">Resize disk</a></dd>-->
+<!--		<dd><a href="template.html" target="_blank">Resize disk</a></dd>-->
+<!--		<dd><a href="template.html" target="_blank">Resize disk</a></dd>-->
+		<br>
+		<dt>CentOS8</dt>
+		<dd><a href="c8/centos8-operations.html" target="_blank">CentOS8 Operations</a></dd>
+		<!-- <dd>Nftables</dd> -->
+		<dd><a href="c8/centos-disable-ipv6.html" target="_blank">CentOS8 - Disable ipv6 on CentOS</a></dd>
+		<dd><a href="c8/centos-nmcli-examples.html" target="_blank">CentOS8: nmcli examples</a></dd>
+		<dd><a href="c8/centos7-to-centos8-in-place-upgrade.html" target="_blank">CentOS8 In place upgrade</a></dd>
+		<br>
+		<dt>Linux</dt>
+		<dd><a href="linux/linux-dilay-admin-commands.html" target="_blank">Daily admin commands</a></dd>
+		<dd><a href="linux/linux-socks-proxy-know-how.html" target="_blank">Linux SOCKS Proxy Know How</a></dd>
+		<dd><a href="linux/linux-mailcheck-shell.html" target="_blank">Mailcheck Shell</a></dd>
+		<dd><a href="linux/linux-openssl-commands.html" target="_blank">Openssl commands</a></dd>
+		<dd><a href="linux/linux-systemd.html" target="_blank">Systemd</a></dd>
+		<dd><a href="linux/linux-systemd-example-script.html" target="_blank">Systemd example script</a></dd>
+		<dd><a href="linux/linux-smtp-telnet-syntax.html" target="_blank">smtp telnet syntax</a></dd>
+		<dd><a href="linux/linux-roundcube-update.html" target="_blank">Roundcube update howto</a></dd>
+		<br>
+		<dt>MariaDB/MySQL</dt>
+		<dd><a href="mariadb/mariadb-db-backup-script.html" target="_blank">MySQL/Maria DB Backup Script</a></dd>
+		<dd><a href="mariadb/mariadb-installation-on-centos7.html" target="_blank">MariaDB Installation on CentsOS7</a></dd>
+		<dd><a href="mariadb/mariadb-new-mysql-user-byshell.html" target="_blank"> MySQL Create new MySQL user by shell</a></dd>
+		<br>
+		<dt>Checkmk</dt>
+		<dd><a href="checkmk/checkmk-show-current-logins.html" target="_blank">Checkmk: Show current logins</a></dd>
+		<dd><a href="checkmk/checkmk-snmp.html" target="_blank">Checkmk: snmp monitoring debugging</a></dd>
+		<br>
+		<dt>Nextcloud</dt>
+		<dd><a href="nextcloud/nextcloud-calendar-sql-commands.html" target="_blank">Nextcloud calendar SQL commands</a></dd>
+		<br>
+		<dt>nginx</dt>
+		<dd><a href="nginx/nginx-basic-auth-config.html" target="_blank">Nginx Basic Auth config</a></dd>
+		<br>
+		<dt>apu - pcengines</dt>
+		<dd><a href="apu/apu-coreboot-update.html" target="_blank">apu pcengines Coreboot update</a></dd>
+		<br>
+		<dt>Manjaro Linux</dt>
+		<dd><a href="manjaro/manjaro-linux-open-dolphin-shortcut.html" target="_blank">Manjaro Linux Open dolphin shortcut</a></dd>
+		<dd><a href="manjaro/manjaro-flameshot-printscreen-shortcut.html" target="_blank">Flameshot with printscreen shortcut</a></dd>
+		<br>
+		<dt>OpenBSD</dt>
+		<dd><a href="openbsd/openbsd-setup-apu-pcengine.html" target="_blank">OpenBSD Setup APU pcengine</a></dd>
+
+		<br>
+		<dt>Synology</dt>
+		<dd><a href="synology/synology-shell-commands-webserver-certs.html" target="_blank">Shell commands for webserver and certs</a></dd>
+		<dd><a href="synology/synology-clear-blocked-ip-list.html" target="_blank">How to clear blocked IP list</a></dd>
+
+		<br>
+		<dt>Joomla</dt>
+		<dd><a href="joomla/joomla-include-own-files.html" target="_blank">Joomla! Include own files</a></dd>
+		<dd><a href="joomla/joomla-admin-password-reset.html" target="_blank">Joomla! Admin Passwort reset</a></dd>
+		
+		<br>
+		<dt>Solaris</dt>
+		<dd><a href="solaris11/solaris11-resize-diskspace-on-solaris.html" target="_blank">Resize Disk Space on Solaris</a></dd>
+		<dd><a href="solaris11/solaris11-set-dns-and-nameservice.html" target="_blank">Solaris11 Set correct DNS and name-service</a></dd>
+		<br>
+		<dt>Internet</dt>
+		<dd><a href="internet/internet-init7-hybrid7-connection-opnsense-firewall.html" target="_blank">Init7 - Hybrid7 connection with Opnsense Firewall</a></dd>
+		<dd><a href="internet/internet-speed.html" target="_blank">Internet Speed</a></dd>
+
+
+	</dl>
+	<br><br>
+	<!-- Matomo Image Tracker-->
+	<img referrerpolicy="no-referrer-when-downgrade" src="https://matomo.kissel.ch/matomo.php?idsite=6&amp;rec=1" style="border:0" alt="" />
+	<!-- End Matomo -->
+
+			<script>
+			document.write("<div class=editdate>last edit:<br>" + " " +document.lastModified);
+			</script>
+<script>
+window.store = {
+// You can specify your blog section only:
+
+// For all pages in your site, use "range .Site.Pages"
+ // You can use any unique identifier here
+ "{{ .Permalink }}": {
+// You can customize your searchable fields using any .Page parameters
+ "title": "{{ .Title }}",
+"tags": ["{{ . }}",],
+"content": , // Strip out HTML tags
+ "url": "{{ .Permalink }}"
+},
+
+}
+</script>
+</body>
+</html>
