@@ -1,0 +1,8 @@
+[input]
+base_directory = "./"
+html_selector = "body"
+url_prefix = "https://kissel.ch/ict/"
+files = [
+     { path = "../*, url = "index.html", title = "Home" },
+#     { path = "../linux/linux-openssl-commands.html", url = "linux/linux-openssl-commands.html", title = "openssl" },
+]
