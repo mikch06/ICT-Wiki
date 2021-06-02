@@ -1,0 +1,5 @@
+[input]
+base_directory = "../"
+files = [
+    {path = "index.html", url = "/federalist-1/", title = "Introduction"},
+]
