@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #ddd;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 50%;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 8px;
+}
+</style>
+</head>
+<body>
+<a href="/web">back</a><h1>Roundcube update</h1>
+<!-- date: 2020-03-08 00:00:00 -->
+<!-- category: linux -->
+<!-- tags: Roundcube -->
+
+<p>Download new roundcube version <strong>(complete package)</strong> from <a href="https://roundcube.net/download">https://roundcube.net/download</a> website or github:</p>
+<pre>wget https://github.com/roundcube/roundcubemail/releases/download/1.4.3/roundcubemail-1.4.3-complete.tar.gz</pre>
+<p>Unpack tar.gz package:  </p>
+<pre>gunzip roundcubemail-1.4.3-complete.tar.gz</pre>
+<p>Unpack tar package:</p>
+<pre>tar -xvf roundcubemail-1.4.3-complete.tar</pre>
+<p>Go to /bin directory:</p>
+<pre>cd roundcubemail-1.4.3/bin/</pre>
+<p>Run installto script to your install dir:</p>
+<pre>./installto.sh ../../my.roundcube.installdir</pre>
+<body>
+</html>

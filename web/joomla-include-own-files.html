@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #ddd;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 50%;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 8px;
+}
+</style>
+</head>
+<body>
+<a href="/web">back</a><h1>Integrate own files in Joomla</h1>
+<!-- date: 2015-09-24 00:00:00 -->
+<!-- category: joomla -->
+<!-- tags: Joomla -->
+<p>Put the following code to the own Joomla files to integrate them to the CMS. After that you can include them by a wrapper.</p>
+<pre><code>php
+define( '_JEXEC', 1);
+define('JPATH_BASE', dirname(__FILE__).'/..' );
+//this is when we are in the root
+define( 'DS', DIRECTORY_SEPARATOR );
+
+require_once ( JPATH_BASE .DS.'includes'.DS.'defines.php' );
+require_once ( JPATH_BASE .DS.'includes'.DS.'framework.php' );
+
+$mainframe =&amp; JFactory::getApplication('site');
+$mainframe-&gt;initialise();
+$user = JFactory::getUser();
+
+echo  $user-&gt;username;
+?&gt;"
+</code></pre>
+<p>In case of the position of the file you have to edit the 'dirname'.</p>
+<body>
+</html>

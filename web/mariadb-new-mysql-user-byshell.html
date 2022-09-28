@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #ddd;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 50%;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 8px;
+}
+</style>
+</head>
+<body>
+<a href="/web">back</a><h1>MySQL Create new MySQL user by shell</h1>
+<!-- date: 2015-09-08 00:00:00 -->
+<!-- category: MySQL -->
+<!-- tags: centos, mariadb, mysql, user, shell -->
+<hr />
+<p>Set a new user with access from a remote host:</p>
+<pre><code>CREATE USER 'DummyUser1'@'localhost' IDENTIFIED BY 'PASSWORD';
+CREATE USER 'DummyUser2'@'%' IDENTIFIED BY 'PASSWORD';
+</code></pre>
+<p>Grant access to the users on both databses (DummyDB1, DummyDB2):</p>
+<pre><code>CREATE USER 'DummyUser1'@'localhost' IDENTIFIED BY 'PASSWORD';
+CREATE USER 'DummyUser2'@'%' IDENTIFIED BY 'PASSWORD';&lt;/pre&gt;
+</code></pre>
+<p>To give a user rights on a root privileged command:</p>
+<pre><code>vi /etc/sudoers
+&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd
+</code></pre>
+<p>Now the user could restart the httpd deamon:</p>
+<pre><code>sudo systemctl restart httpd
+</code></pre>
+<body>
+</html>

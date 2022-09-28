@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #ddd;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 50%;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 8px;
+}
+</style>
+</head>
+<body>
+<a href="/web">back</a><h1>VirtualBox KnowHow</h1>
+<!-- date: 2015-10-16 00:00:00 -->
+<!-- category: virtualbox -->
+<!-- tags: VirtualBox -->
+<hr />
+<p>Install Virtual Box Extension Pack:<br>
+<br>
+Download newest Extension Pack on Virtual Box Dwonloads and move it on your Server. </p>
+<p>Install with:</p>
+<pre><code>vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.4-102546.vbox-extpack
+0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
+Successfully installed "Oracle VM VirtualBox Extension Pack".
+</code></pre>
+<p>Autostart Script for phpVirtualBox with systemd:</p>
+<pre><code>cd /etc/systemd/system
+vi vboxwebsrv.service
+
+[Unit]
+Description=Start vboxwebsrv.service
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/vboxwebsrv
+RemainAfterExit=true
+KillMode=none
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>:x!</p>
+<pre><code>systemctl enable vboxwebsrv.service
+systemctl start vboxwebsrv.service
+</code></pre>
+<body>
+</html>

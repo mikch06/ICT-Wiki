@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #ddd;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 50%;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 8px;
+}
+</style>
+</head>
+<body>
+<a href="/web">back</a><h1>OpenBSD on apu pcengine</h1>
+<!-- date: 2018-05-01 00:00:00 -->
+<!-- category: openbsd -->
+<!-- tags: OpenBSD, apu, pcengines -->
+<hr />
+<ol>
+<li>Download the small minirootXX.fs from OpenBSD.org<br></li>
+<li>
+<p>Prepare an USB Stick:</p>
+<p>dd if=minirootXX.fs of=/dev/usb-device bs=1</p>
+</li>
+<li>
+<p>Prepare your serial console: 115200,8n1.<br></p>
+</li>
+<li>Insert Memory stick and boot.<br></li>
+<li>At the console prompt choose Nr. 2, boot from USB Stick<br></li>
+<li>
+<p>For just a few seconds the BSD boot prompt will appear. Now you have to redirect the serial console:<br></p>
+<p>stty com0 115200
+set tty com0
+=&gt; press Enter</p>
+</li>
+</ol>
+<p>after the installation fix it in the boot.conf</p>
+<pre><code>set tty com0
+-&gt; the system will ask for that while the installation process.
+</code></pre>
+<body>
+</html>

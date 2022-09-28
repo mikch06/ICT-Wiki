@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #ddd;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 50%;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 8px;
+}
+</style>
+</head>
+<body>
+<a href="/web">back</a><h1>Nextcloud calendar SQL commands</h1>
+<!-- date: 2020-09-03 00:00:00 -->
+<!-- category: nextcloud -->
+<!-- tags: Nextcloud -->
+<hr />
+<p>Nextcloud: Use Nextcloud with SQL commands</p>
+<ul>
+<li>
+<p>Nextcloud calendar:</p>
+<p>Select all calendar events older than ...</p>
+<pre><code>SELECT * FROM `oc_calendarobjects` WHERE calendarid = 2 AND lastoccurence &gt;= 1583323200
+- calendarid -&gt; e.g. your birthday calendar
+- lastoccurence -&gt; timestamp in unixtime
+</code></pre>
+</li>
+</ul>
+<body>
+</html>

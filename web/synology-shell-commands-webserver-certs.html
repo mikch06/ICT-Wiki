@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #ddd;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 50%;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 8px;
+}
+</style>
+</head>
+<body>
+<a href="/web">back</a><h1>Synology certificates</h1>
+<!-- date: 2018-01-06 00:00:00 -->
+<!-- category: Synology -->
+<!-- tags: Synology,certs,tls -->
+
+<p>Is it possible to change certificates for the file stations and synology ui by shell?<br><br>
+Yes, it is.<br><br>
+You can find and replace the certs here:</p>
+<pre>/usr/syno/etc/certificate/system/default</pre>
+<p>After editing the certificates you can use the syno-cli to manipulate the services:<br><br>
+Work with the root user (careful):</p>
+<pre># synoservice </pre>
+<p>you'll get the help and see --status</p>
+<pre># synoservice --status</pre>
+<p>Now you have all syno services listed.<br><br>
+For restarting the webserver (nginx) you can restart the nginx service which you find in the status list:</p>
+<pre>=======================================
+Service [nginx] status=[enable]
+required upstart job:
+    [nginx] is start.
+=======================================</pre>
+<p>Use the synoservicectl tool to restart the service:</p>
+<pre># synoservicectl --restart nginx</pre>
+<body>
+</html>
