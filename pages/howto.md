@@ -1,4 +1,4 @@
-# Howto-Collection
+    # Howto-Collection
 <!-- date: 2020-01-01 00:00:00 -->
 <!-- tags: Howtos -->
 
@@ -6,10 +6,13 @@
 
 <li><a href="https://kerneltalks.com/disk-management/how-to-rescan-disk-in-linux-after-extending-vmware-disk/" target="_blank">How to rescan disk in Linux after extending v
 mware disk
-<li><a href="https://ict-freak.nl/2010/03/30/vsphere-hot-add-or-remove-a-vmdk-with-a-linux-vm/" target="_blank">vSphere: Hot Add or Remove a VMDK with a Linux VM <a/></li>
+<li><a href="https://ict-freak.nl/2010/03/30/vsphere-hot-add-or-remove-a-vmdk-with-a-linux-vm/" target="_blank">vSphere: Hot Add or Remove a VMDK with a Linux VM
+
 
 ### Monitoring
-  
+
+
+
 <li><a href="https://mathias-kettner.de/check_mk.html" target="_blank">Check_MK<a/></li>
 <li><a href="https://grafana.com/" target="_blank">Grafana<a/></li>
 <a/></li>
