@@ -99,10 +99,10 @@ with open(home, 'w') as f:
     f.write(header)
     f.write(homepage)
     for page in path:
-        print(page)
+        print("URL:", page)
         newpage = os.path.splitext(page)[0]
         newpage = newpage.replace("-", " ")
-        print(newpage)
+        print("Title:", newpage)
         f.write("<a href=\"{0}\">{1}</a><br>".format(page, newpage))
     f.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(stamp))
     f.write(footer)
