@@ -16,7 +16,7 @@ pre {
   display: block;
   color: white;
   background-color: black;
-  max-width: 50%;
+  max-width: 800px;
   min-width: 100px;
   padding: 10px;
   border-radius: 5px;
@@ -35,12 +35,17 @@ font-size: 8px;
 </style>
 </head>
 <body>
-<a href="/web">back</a><h1>Opnsense cronjobs</h1>
-<!-- date: 2022-05-10 00:00:00 -->
-<!-- category: opnsense -->
-<!-- tags: opnsense, cron -->
-
-<p>Nice Web Tutorial:
-<a href="https://www.kuerbis.org/2022/02/kurztipp-custom-cronjobs-mit-opnsense/">Custom Cronjobs mit OPNsense</p>
+<a href="index.html">back</a><h1>Sudoers</h1>
+<!-- date: 2015-12-23 00:00:00 -->
+<!-- category: centos -->
+<!-- tags: CentOS, Linux, sudo -->
+<hr />
+<p>To give a user rights on a root privileged command:</p>
+<pre><code>vi /etc/sudoers
+&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd
+</code></pre>
+<p>Now the user could restart the httpd deamon:</p>
+<pre><code>sudo systemctl restart httpd
+</code></pre>
 <body>
 </html>

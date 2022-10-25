@@ -4,6 +4,8 @@ import shutil
 from pathlib import Path
 import markdown
 from datetime import datetime
+import re
+
 
 # Filepath
 source = 'pages'
@@ -32,7 +34,7 @@ pre {
   display: block;
   color: white;
   background-color: black;
-  max-width: 50%;
+  max-width: 800px;
   min-width: 100px;
   padding: 10px;
   border-radius: 5px;
@@ -52,7 +54,7 @@ font-size: 8px;
 </head>
 <body>
 """
-back = "<a href=\"/{0}\">back</a>".format(dest)
+back = "<a href=\"index.html\">back</a>"
 
 footer = "\n<body>\n</html>"
 
@@ -99,13 +101,20 @@ with open(home, 'w') as f:
     f.write(header)
     f.write(homepage)
     for page in path:
-        print("URL:", page)
         newpage = os.path.splitext(page)[0]
         newpage = newpage.replace("-", " ")
-        print("Title:", newpage)
+        print("title:", newpage)
         f.write("<a href=\"{0}\">{1}</a><br>".format(page, newpage))
     f.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(stamp))
     f.write(footer)
-    
-    
-    test1
+
+for page in Path(source).glob('*'):
+    with open(page, "r") as file:
+        patrn = "category"
+        for line in file:
+            if re.findall(patrn, line):
+                cat = line.split()[2]
+                print("Category:", cat)
+
+                
+realtest
