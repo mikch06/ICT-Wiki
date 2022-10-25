@@ -106,3 +106,6 @@ with open(home, 'w') as f:
         f.write("<a href=\"{0}\">{1}</a><br>".format(page, newpage))
     f.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(stamp))
     f.write(footer)
+    
+    
+    test1
