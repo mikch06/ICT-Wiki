@@ -35,15 +35,26 @@ font-size: 10px;
 </style>
 </head>
 <body>
-<a href="index.html">back</a><h1>JavaScripts</h1>
-<!-- date: 2021-11-08 00:00:00 -->
-<!-- category: javascript -->
-<!-- tags: javascript -->
-
-<h2>Last edit in HTML</h2>
-<pre><code>&lt;script&gt;
-document.write("last edit:" + " " +document.lastModified);
-&lt;/script&gt;
+<a href="index.html">back</a><h1>Nginx Basic Auth config</h1>
+<!-- date: 2020-04-05 00:00:00 -->
+<!-- category: nginx -->
+<!-- tags: nginx, Basic Auth, Linux -->
+<hr />
+<p>Configure location:</p>
+<pre><code>    location / {
+    auth_basic "closed site";
+    auth_basic_user_file htpasswd;
+    }
+</code></pre>
+<p>Create password file:</p>
+<pre><code>yum install httpd-tools&lt;/pre&gt;
+</code></pre>
+<p>New file:</p>
+<pre><code>htpasswd -c htpasswd-file "username"
+</code></pre>
+<p>New password:</p>
+<p>Append user to existing file:</p>
+<pre><code>htpasswd htpasswd-file "username"
 </code></pre>
 <body>
 </html>

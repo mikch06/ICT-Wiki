@@ -35,15 +35,16 @@ font-size: 10px;
 </style>
 </head>
 <body>
-<a href="index.html">back</a><h1>JavaScripts</h1>
-<!-- date: 2021-11-08 00:00:00 -->
-<!-- category: javascript -->
-<!-- tags: javascript -->
+<a href="index.html">back</a><h1>Checkmk snmp commands</h1>
+<!-- date: 2021-04-28 00:00:00 -->
+<!-- category: checkmk -->
+<!-- tags: checkmk -->
 
-<h2>Last edit in HTML</h2>
-<pre><code>&lt;script&gt;
-document.write("last edit:" + " " +document.lastModified);
-&lt;/script&gt;
-</code></pre>
+<p>Commands to debug snmp monitoring with Checkmk</p>
+<pre>
+cmk --debug -D hostname
+cmk --debug -vvn hostname
+cmk --check -Ivv hostname
+</pre>
 <body>
 </html>

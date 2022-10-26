@@ -35,15 +35,16 @@ font-size: 10px;
 </style>
 </head>
 <body>
-<a href="index.html">back</a><h1>JavaScripts</h1>
-<!-- date: 2021-11-08 00:00:00 -->
-<!-- category: javascript -->
-<!-- tags: javascript -->
-
-<h2>Last edit in HTML</h2>
-<pre><code>&lt;script&gt;
-document.write("last edit:" + " " +document.lastModified);
-&lt;/script&gt;
+<a href="index.html">back</a><h1>Resize Disk Space on Solaris</h1>
+<!-- date: 2015-08-15 00:00:00 -->
+<!-- category: solaris -->
+<!-- tags: Solaris11,Unix,zfs -->
+<hr />
+<pre><code>format -e
+# growfs -M /mount-point /dev/md/rdsk/volumename
+# growfs -M /home2 /dev/md/rdsk/d10
+zfs set volsize=5G rpool/swap
+swap -a /dev/zvol/dsk/rpool/swap
 </code></pre>
 <body>
 </html>

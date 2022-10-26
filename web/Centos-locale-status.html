@@ -35,15 +35,22 @@ font-size: 10px;
 </style>
 </head>
 <body>
-<a href="index.html">back</a><h1>JavaScripts</h1>
-<!-- date: 2021-11-08 00:00:00 -->
-<!-- category: javascript -->
-<!-- tags: javascript -->
+<a href="index.html">back</a><h1>status / set-locale</h1>
+<!-- date: 2015-09-09 00:00:00 -->
+<!-- category: centos -->
+<!-- tags: centos,linux,locale,locale-status -->
 
-<h2>Last edit in HTML</h2>
-<pre><code>&lt;script&gt;
-document.write("last edit:" + " " +document.lastModified);
-&lt;/script&gt;
-</code></pre>
+<p>Show and edit locale status on CentOS:</p>
+<p>Show locale status:</p>
+<pre>[root@host]# localectl status
+System Locale: LANG=de_DE.UTF-8
+VC Keymap: sg
+X11 Layout: ch
+Show all possible locaels:
+localectl list-locales
+</pre>
+<p>Setzen der neuen locale:</p>
+<pre>localectl set-locale LANG="locale name"
+locale</pre>
 <body>
 </html>

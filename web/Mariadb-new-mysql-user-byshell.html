@@ -35,11 +35,19 @@ font-size: 10px;
 </style>
 </head>
 <body>
-<a href="index.html">back</a><h1>Sudoers</h1>
-<!-- date: 2015-12-23 00:00:00 -->
-<!-- category: centos -->
-<!-- tags: CentOS, Linux, sudo -->
+<a href="index.html">back</a><h1>MySQL Create new MySQL user by shell</h1>
+<!-- date: 2015-09-08 00:00:00 -->
+<!-- category: MySQL -->
+<!-- tags: centos, mariadb, mysql, user, shell -->
 <hr />
+<p>Set a new user with access from a remote host:</p>
+<pre><code>CREATE USER 'DummyUser1'@'localhost' IDENTIFIED BY 'PASSWORD';
+CREATE USER 'DummyUser2'@'%' IDENTIFIED BY 'PASSWORD';
+</code></pre>
+<p>Grant access to the users on both databses (DummyDB1, DummyDB2):</p>
+<pre><code>CREATE USER 'DummyUser1'@'localhost' IDENTIFIED BY 'PASSWORD';
+CREATE USER 'DummyUser2'@'%' IDENTIFIED BY 'PASSWORD';&lt;/pre&gt;
+</code></pre>
 <p>To give a user rights on a root privileged command:</p>
 <pre><code>vi /etc/sudoers
 &lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd

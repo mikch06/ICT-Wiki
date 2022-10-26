@@ -35,17 +35,46 @@ font-size: 10px;
 </style>
 </head>
 <body>
-<a href="index.html">back</a><h1>Sudoers</h1>
-<!-- date: 2015-12-23 00:00:00 -->
+<a href="index.html">back</a><h1>CentOS7 to CentOS8 in place Upgrade</h1>
+<!-- date: 2020-09-17 00:00:00 -->
 <!-- category: centos -->
-<!-- tags: CentOS, Linux, sudo -->
+<!-- tags: Centos, Linux -->
 <hr />
+<h1><q>DRAFT</q></h1>
+<h3>Update procedure</h3>
+
+<pre>
+    Update to the last level
+
+    Install epel repo
+    Make cache fast
+
+yum makecache fast
+
+    Install utils, rpmconfg
+
+yum install -y yum-utils rpmconf 
+
+    Rpmconf: Locate and remove conflicting config files
+
+rpmconf -a
+
+Your choice: N (default choice)
+
+    List packages that are not required
+
+package-cleanup --leaves
+
+    List packages that are older or duplicate
+
+package-cleanup --orphans
+
+    Remove those packages
+
+</pre>
 <p>To give a user rights on a root privileged command:</p>
-<pre><code>vi /etc/sudoers
-&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd
-</code></pre>
+<pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
 <p>Now the user could restart the httpd deamon:</p>
-<pre><code>sudo systemctl restart httpd
-</code></pre>
+<pre>sudo systemctl restart httpd</pre>
 <body>
 </html>

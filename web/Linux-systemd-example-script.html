@@ -35,23 +35,30 @@ font-size: 10px;
 </style>
 </head>
 <body>
-<a href="index.html">back</a><h1>Linux OpenSSL commands</h1>
-<!-- date: 2017-02-11 00:00:00 -->
+<a href="index.html">back</a><h1>Systemd: Example service script</h1>
+<!-- date: 2020-05-25 00:00:00 -->
 <!-- category: linux -->
-<!-- tags: openssl, cert, key -->
-<hr />
-<p>Check a certificate</p>
-<pre>openssl x509 -in server.crt -text -noout</pre>
-<p>Check a key</p>
-<pre>openssl rsa -in server.key -check</pre>
-<p>Check a CSR</p>
-<pre>openssl req -text -noout -verify -in server.csr</pre>
-<p>Verify a certificate and key matches</p>
-<pre>openssl x509 -noout -modulus -in server.crt| openssl md5<br>
-openssl rsa -noout -modulus -in server.key| openssl md5</pre>
-<p>Create a self signed cert &amp; private key<br><br>
-- valid: 1y<br>
-- key: 2048 bit</p>
-<pre>openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout selfsigned.key -out selfsigned.crt</pre>
+<!-- tags: linux, systemd -->
+<p>Example service script:<br>
+e.g. daphne application server with a django app.</p>
+<pre># vi /etc/systemd/system/daphne.service</pre>
+<pre>[Unit]
+Description=daphne service to run django application
+After=network.target
+After=nginx.service
+
+[Service]
+Type=simple
+User=mik
+Group=mik
+WorkingDirectory=/opt/app/
+ExecStart=/opt/app/wine-env/bin/daphne djangoapp.asgi:application
+ExecStop=/bin/kill -s TERM $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target</pre>
+<p></body>
+</html></p>
 <body>
 </html>

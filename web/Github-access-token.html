@@ -35,23 +35,16 @@ font-size: 10px;
 </style>
 </head>
 <body>
-<a href="index.html">back</a><h1>Linux OpenSSL commands</h1>
-<!-- date: 2017-02-11 00:00:00 -->
+<a href="index.html">back</a><h1>Github access tokens</h1>
+<!-- date: 2022-10-26 00:00:00 -->
 <!-- category: linux -->
-<!-- tags: openssl, cert, key -->
+<!-- tags: github -->
 <hr />
-<p>Check a certificate</p>
-<pre>openssl x509 -in server.crt -text -noout</pre>
-<p>Check a key</p>
-<pre>openssl rsa -in server.key -check</pre>
-<p>Check a CSR</p>
-<pre>openssl req -text -noout -verify -in server.csr</pre>
-<p>Verify a certificate and key matches</p>
-<pre>openssl x509 -noout -modulus -in server.crt| openssl md5<br>
-openssl rsa -noout -modulus -in server.key| openssl md5</pre>
-<p>Create a self signed cert &amp; private key<br><br>
-- valid: 1y<br>
-- key: 2048 bit</p>
-<pre>openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout selfsigned.key -out selfsigned.crt</pre>
+<p>Repo usage with username and password on github is deprecated.</p>
+<p>Use Personal access tokens: <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></p>
+<p>or: Github -&gt; Settings -&gt; Developer Settings -&gt; Personal access tokens -&gt; Tokens (classic)</p>
+<h2>To store the token (credential) for your machine:</h2>
+<pre><code>git config credential.helper store
+</code></pre>
 <body>
 </html>

@@ -35,23 +35,27 @@ font-size: 10px;
 </style>
 </head>
 <body>
-<a href="index.html">back</a><h1>Linux OpenSSL commands</h1>
-<!-- date: 2017-02-11 00:00:00 -->
+<a href="index.html">back</a><h1>Linux Desktop with Apple Keyboard</h1>
+<!-- date: 2015-01-01 00:00:00 -->
 <!-- category: linux -->
-<!-- tags: openssl, cert, key -->
+<!-- tags:  -->
 <hr />
-<p>Check a certificate</p>
-<pre>openssl x509 -in server.crt -text -noout</pre>
-<p>Check a key</p>
-<pre>openssl rsa -in server.key -check</pre>
-<p>Check a CSR</p>
-<pre>openssl req -text -noout -verify -in server.csr</pre>
-<p>Verify a certificate and key matches</p>
-<pre>openssl x509 -noout -modulus -in server.crt| openssl md5<br>
-openssl rsa -noout -modulus -in server.key| openssl md5</pre>
-<p>Create a self signed cert &amp; private key<br><br>
-- valid: 1y<br>
-- key: 2048 bit</p>
-<pre>openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout selfsigned.key -out selfsigned.crt</pre>
+<p>I like to have &lt; &gt; ° etc. in a correct way of use on my keyboard. <br><br>
+    Usage:</p>
+<ul>
+<li>
+<p>temoporary setting:</p>
+<p>vi /sys/module/hid_apple/parameters/iso_layout
+1 -&gt; 0</p>
+</li>
+<li>
+<p>permanent setting:</p>
+<p>vi /etc/modprobe.d/hid_apple.conf
+options hid_apple iso_layout=0</p>
+</li>
+</ul>
+<p>Update initramfs bootfile:</p>
+<pre><code>update-initframs
+</code></pre>
 <body>
 </html>

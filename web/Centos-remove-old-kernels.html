@@ -35,15 +35,24 @@ font-size: 10px;
 </style>
 </head>
 <body>
-<a href="index.html">back</a><h1>JavaScripts</h1>
-<!-- date: 2021-11-08 00:00:00 -->
-<!-- category: javascript -->
-<!-- tags: javascript -->
-
-<h2>Last edit in HTML</h2>
-<pre><code>&lt;script&gt;
-document.write("last edit:" + " " +document.lastModified);
-&lt;/script&gt;
+<a href="index.html">back</a><h1>Remove old kernels</h1>
+<!-- date: 2020-03-24 00:00:00 -->
+<!-- category: centos -->
+<!-- tags: centos, linux -->
+<hr />
+<p>Current running kernel</p>
+<pre><code>uname -an
+</code></pre>
+<p>Show installed kernels:</p>
+<pre><code>rpm -q kernel
+</code></pre>
+<p><b>CentOS 7:</b> 
+Remove old kernels with package-cleanup (yum-utils required)</p>
+<pre><code>package-cleanup --oldkernels package-cleanup --oldkernels --count=2
+</code></pre>
+<p><b>CentOS 8:</b> Remove old kernels with dnf</p>
+<pre><code>dnf remove --oldinstallonly
+dnf remove --oldinstallonly --setopt installonly_limit=2
 </code></pre>
 <body>
 </html>

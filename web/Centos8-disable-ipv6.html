@@ -35,15 +35,19 @@ font-size: 10px;
 </style>
 </head>
 <body>
-<a href="index.html">back</a><h1>JavaScripts</h1>
-<!-- date: 2021-11-08 00:00:00 -->
-<!-- category: javascript -->
-<!-- tags: javascript -->
+<a href="index.html">back</a><h1>Disable ipv6 on CentOS8</h1>
+<!-- date: 2020-06-03 00:00:00 -->
+<!-- category: centos -->
+<!-- tags: CentOS, Linux, ipv6 -->
+<hr />
+<p>Disable ipv6 on CentOS8:</p>
+<pre><code># vi /etc/sysctl.conf
 
-<h2>Last edit in HTML</h2>
-<pre><code>&lt;script&gt;
-document.write("last edit:" + " " +document.lastModified);
-&lt;/script&gt;
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+
+
+sysctl -p
 </code></pre>
 <body>
 </html>
