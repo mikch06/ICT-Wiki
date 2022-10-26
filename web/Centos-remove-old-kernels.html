@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #eee;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 800px;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 10px;
+}
+</style>
+</head>
+<body>
+<a href="index.html">back</a><h1>Remove old kernels</h1>
+<!-- date: 2020-03-24 00:00:00 -->
+<!-- category: centos -->
+<!-- tags: centos, linux -->
+<hr />
+<p>Current running kernel</p>
+<pre><code>uname -an
+</code></pre>
+<p>Show installed kernels:</p>
+<pre><code>rpm -q kernel
+</code></pre>
+<p><b>CentOS 7:</b> 
+Remove old kernels with package-cleanup (yum-utils required)</p>
+<pre><code>package-cleanup --oldkernels package-cleanup --oldkernels --count=2
+</code></pre>
+<p><b>CentOS 8:</b> Remove old kernels with dnf</p>
+<pre><code>dnf remove --oldinstallonly
+dnf remove --oldinstallonly --setopt installonly_limit=2
+</code></pre>
+<body>
+</html>

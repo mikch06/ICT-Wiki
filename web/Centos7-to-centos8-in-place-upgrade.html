@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #eee;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 800px;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 10px;
+}
+</style>
+</head>
+<body>
+<a href="index.html">back</a><h1>CentOS7 to CentOS8 in place Upgrade</h1>
+<!-- date: 2020-09-17 00:00:00 -->
+<!-- category: centos -->
+<!-- tags: Centos, Linux -->
+<hr />
+<h1><q>DRAFT</q></h1>
+<h3>Update procedure</h3>
+
+<pre>
+    Update to the last level
+
+    Install epel repo
+    Make cache fast
+
+yum makecache fast
+
+    Install utils, rpmconfg
+
+yum install -y yum-utils rpmconf 
+
+    Rpmconf: Locate and remove conflicting config files
+
+rpmconf -a
+
+Your choice: N (default choice)
+
+    List packages that are not required
+
+package-cleanup --leaves
+
+    List packages that are older or duplicate
+
+package-cleanup --orphans
+
+    Remove those packages
+
+</pre>
+<p>To give a user rights on a root privileged command:</p>
+<pre>vi /etc/sudoers​<br />&lt;USER&gt; ALL = NOPASSWD: /bin/systemctl restart httpd</pre>
+<p>Now the user could restart the httpd deamon:</p>
+<pre>sudo systemctl restart httpd</pre>
+<body>
+</html>

@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #eee;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 800px;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 10px;
+}
+</style>
+</head>
+<body>
+<a href="index.html">back</a><h1>Github access tokens</h1>
+<!-- date: 2022-10-26 00:00:00 -->
+<!-- category: linux -->
+<!-- tags: github -->
+<hr />
+<p>Repo usage with username and password on github is deprecated.</p>
+<p>Use Personal access tokens: <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a></p>
+<p>or: Github -&gt; Settings -&gt; Developer Settings -&gt; Personal access tokens -&gt; Tokens (classic)</p>
+<h2>To store the token (credential) for your machine:</h2>
+<pre><code>git config credential.helper store
+</code></pre>
+<body>
+</html>
