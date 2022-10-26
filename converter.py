@@ -26,7 +26,7 @@ header = """
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <style>
 body, html  {
-background-color: #ddd;
+background-color: #eee;
 margin: 10px;
 }
 
@@ -48,7 +48,7 @@ a   {
 text-decoration: none;
 }
 #stamp  {
-font-size: 8px;
+font-size: 10px;
 }
 </style>
 </head>
@@ -91,7 +91,7 @@ for file in mdowns:
 
 # Generate Fileindex / Homepage
 home = os.path.join(dest, "index.html")
-path = os.listdir(dest)
+path = sorted(os.listdir(dest))
 
 homepage = """
 <h1>ICT wiki</h1>
@@ -108,13 +108,10 @@ with open(home, 'w') as f:
     f.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(stamp))
     f.write(footer)
 
-for page in Path(source).glob('*'):
+for page in sorted(Path(source).glob('*')):
     with open(page, "r") as file:
         patrn = "category"
         for line in file:
             if re.findall(patrn, line):
                 cat = line.split()[2]
                 print("Category:", cat)
-
-                
-realtest
