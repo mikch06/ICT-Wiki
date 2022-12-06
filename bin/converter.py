@@ -89,7 +89,7 @@ for file in mdowns:
             f.write(footer)
             f.close()
 
-# Generate Fileindex / Homepage
+# Generate File-index / Homepage
 home = os.path.join(dest, "index.html")
 path = sorted(os.listdir(dest))
 
