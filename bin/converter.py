@@ -13,7 +13,7 @@ dest = 'web'
 
 # Generate timestamp
 now = datetime.now()
-stamp = now.strftime("%Y-%m-%d")
+stamp = now.strftime("%Y-%m-%d %H:%M")
 
 # HTML Header
 header = """
@@ -108,10 +108,11 @@ with open(home, 'w') as f:
     f.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(stamp))
     f.write(footer)
 
-for page in sorted(Path(source).glob('*')):
-    with open(page, "r") as file:
-        patrn = "category"
-        for line in file:
-            if re.findall(patrn, line):
-                cat = line.split()[2]
-                print("Category:", cat)
+    for page in sorted(Path(source).glob('*')):
+        with open(page, "r") as file:
+            patrn = "category"
+            for line in file:
+                if re.findall(patrn, line):
+                    cat = line.split()[2]
+                    print("Category:", cat)
+                    #f.write("<b>{0}</b><br>".format(cat))
