@@ -1,0 +1,1 @@
+./pagefind --source ../web/ --bundle-dir _pagefind
