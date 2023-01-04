@@ -50,6 +50,10 @@ text-decoration: none;
 #stamp  {
 font-size: 10px;
 }
+
+#search {
+max-width: 50%;
+}
 </style>
 </head>
 <body>
@@ -95,6 +99,15 @@ path = sorted(os.listdir(dest))
 
 homepage = """
 <h1>ICT wiki</h1>
+<link href="_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="_pagefind/pagefind-ui.js" type="text/javascript"></script>
+
+<div id="search"></div>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#search" });
+    });
+</script>
 """
 
 with open(home, 'w') as f:
