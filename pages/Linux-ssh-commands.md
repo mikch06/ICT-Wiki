@@ -5,7 +5,7 @@
 ***
 Check a key
 
-<pre>ssh-keygen -lf '<key>'</pre>
+<pre>ssh-keygen -lf [key]</pre>
 
 Scan a key
 
