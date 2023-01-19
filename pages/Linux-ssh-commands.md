@@ -9,6 +9,6 @@ Check a key
 
 Scan a key
 
-<pre>ssh-keyscan "<host>"</pre>
+<pre>ssh-keyscan [host]</pre>
 
 --> then do a scan ;-)
