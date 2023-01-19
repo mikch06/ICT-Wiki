@@ -5,10 +5,10 @@
 ***
 Check a key
 
-<pre>ssh-keygen -lf <key></pre>
+<pre>ssh-keygen -lf "<key>"</pre>
 
 Scan a key
 
-<pre>ssh-keyscan <host></pre>
+<pre>ssh-keyscan "<host>"</pre>
 
 --> then do a scan ;-)
