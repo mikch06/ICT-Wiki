@@ -38,3 +38,9 @@ for file in mdowns:
         #results.write
         results.write(results_template.name)
         print(f"... wrote {file}")
+
+
+
+
+
+#     env = jinja2.Environment( loader=MyTemplateLoader(tpl_path or './') )
