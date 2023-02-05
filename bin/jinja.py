@@ -1,4 +1,4 @@
-# write_messages.py
+    # write_messages.py
 from pathlib import Path
 
 
@@ -12,6 +12,7 @@ dest = 'web'
 
 environment = Environment(loader=FileSystemLoader("./templates/"))
 template = environment.get_template("results.html")
+article_template = environment.get_template('article.html')
 
 
 
