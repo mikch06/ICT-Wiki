@@ -1,7 +1,9 @@
 # CentOS Linux fail2ban
+---
 <!-- date: 2010-12-03 00:00:00 -->
 <!-- category: centos -->
 <!-- tags: centos, fail2ban -->
+---
 On exposed systems to the internet fail2ban is used to avoid attacks e.g. on ssh deamon. 
 This shows the install and config on the CentOS 7.2 release with using firewalld (preinstalled). 
 First install fail2ban from repo:
