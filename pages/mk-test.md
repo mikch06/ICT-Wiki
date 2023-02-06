@@ -3,15 +3,8 @@ date: 2010-12-03 00:00:00
 ctegory: centos
 tags: centos, fail2ban
 ---
+# CentOS Linux fail2ban
 
----
-title: Old Fashioned Doughnuts
-date: 2019-04-14
-tags: Sweet
-thumbnail: img/doughnuts.jpg
-summary: Old fashioned sugar dusted doughnuts. Better than any store bought doughnuts.
-slug: doughnuts
----
 
 
 On exposed systems to the internet fail2ban is used to avoid attacks e.g. on ssh deamon. 
