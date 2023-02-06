@@ -1,4 +1,3 @@
-# CentOS Linux fail2ban
 ---
 date: 2010-12-03 00:00:00
 ctegory: centos
