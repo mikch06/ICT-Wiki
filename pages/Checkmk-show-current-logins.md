@@ -1,4 +1,4 @@
-# Show current logins
+# Checkmk: Show current logins
 <!-- date: 2020-06-16 00:00:00 -->
 <!-- category: checkmk -->
 <!-- tags: checkmk, plugins -->
