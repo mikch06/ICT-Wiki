@@ -8,6 +8,26 @@ Rescan existing disks:
 <pre>echo 1 > /sys/class/scsi_device/1\:0\:1\:0/device/rescan</pre>
 Check new disk:
 <pre>fdisk -l /dev/sdb</pre>
+
+### Create new disk of physical volume if you see it with 'fdisk -l'
+
+    pvcreate /dev/sdb
+ 
+Extend existing volume group with new disk
+
+    vgextend rl /dev/sdb
+ 
+Extend existing logical volume to the max
+
+    lvextend -l +100%FREE /dev/rl/root
+ 
+Grow existing files system
+
+    xfs_growfs /dev/rl/root
+
+
+
+
 <h3>Volumes</h3>
 <p>Physical / Logical Volumes</p>
 Create physical volume
