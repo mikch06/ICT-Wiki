@@ -9,7 +9,8 @@ Rescan existing disks:
 Check new disk:
 <pre>fdisk -l /dev/sdb</pre>
 
-### Create new disk of physical volume if you see it with 'fdisk -l'
+# Quick new disk
+## Create new disk of physical volume if you see it with 'fdisk -l'
 
     pvcreate /dev/sdb
  
