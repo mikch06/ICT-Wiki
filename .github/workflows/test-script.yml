@@ -20,5 +20,4 @@ jobs:
     steps:
     - name: Prin out Hello World
       run: |
-        print("Hello World")
-
+       python print("Hello World")
