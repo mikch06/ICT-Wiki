@@ -20,4 +20,4 @@ jobs:
     steps:
     - name: Prin out Hello World
       run: |
-       python foo.yml
+       python foo.py
