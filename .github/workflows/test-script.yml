@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Prin out Hello World
+    - name: Print out Hello World
       run: |
-       python foo.py
+       python ../../foo.py
        
