@@ -1,4 +1,4 @@
- ---
+---
 title: "foo"
 category: "foocat"
 tags: "foo, linux, computers"
