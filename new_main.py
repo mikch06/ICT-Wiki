@@ -29,6 +29,7 @@ for filename in os.listdir(pages):
         rendered_html = post_template.render(page_title=filename, content=html_text)
 
         # HTML-Datei speichern
+
         html_filename = os.path.splitext(filename)[0] + ".html"
         with open(html_filename, "w") as html_file:
             html_file.write(rendered_html)
