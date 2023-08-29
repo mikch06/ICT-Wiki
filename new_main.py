@@ -38,12 +38,12 @@ for filename in os.listdir(pages):
 # Handling index.html
 file_names = []
 
-for filename in os.listdir(pages):
+output_path = os.path.join(output_dir, "index.html")
+
+#for filename in os.listdir(pages):
     #home_html = home_template.render(data)
 
-    output_path = os.path.join(output_dir, "index.html")
-
-    index_rendered = home_template.render(filenames=file_names)
-    with open(output_path, "w") as index_file:
-        index_file.write(index_rendered)
-        print("Print Index: ", pages)
+index_rendered = home_template.render(filenames=file_names)
+with open(output_path, "w") as index_file:
+    index_file.write(index_rendered)
+    print("Print Index: ", pages)
