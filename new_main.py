@@ -16,43 +16,25 @@ post_template = env.get_template('post.html')
 test_template = env.get_template('test.html')
 
 
-# Durchsuche das Verzeichnis nach Markdown-Dateien
+# Handling posts
 for filename in os.listdir(pages):
     if filename.endswith(".md"):
         # Markdown-Datei einlesen
         with open(os.path.join(pages, filename), "r") as file:
             markdown_text = file.read()
 
-        # Markdown in HTML umwandeln
+        # Change markdown to html
         html_text = markdown.markdown(markdown_text)
 
-        # Jinja-Template rendern
+        # Render Jinja template
         rendered_html = post_template.render(page_title=filename, content=html_text)
 
-        # HTML-Datei speichern
-
+        # Save html
         output_path = os.path.join(output_dir, os.path.splitext(filename)[0] + ".html")
-        # html_filename = os.path.splitext(filename)[0] + ".html"
         with open(output_path, "w") as html_file:
             html_file.write(rendered_html)
             print("Created: ", filename)
 
-
-
-
-
-# # Handling posts
-# for wine in data['wines']:
-#     post_html = post_template.render(wine=wine)
-#     #post_html = post_template.render(wine=['wine'])
-#     print("data: ", data)
-#
-#     post_file_path = 'output/posts/{name}.html'.format(name=wine['name'])
-#
-#     os.makedirs(os.path.dirname(post_file_path), exist_ok=True)
-#     with open(post_file_path, 'w', encoding="utf-8") as file:
-#         file.write(post_html)
-#
 # # Handling index.html
 # for wine in data['wines']:
 #     home_html = home_template.render(data)
