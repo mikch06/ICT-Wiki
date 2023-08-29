@@ -11,7 +11,7 @@ env = Environment(
     autoescape=select_autoescape()
 )
 
-home_template = env.get_template("home.html")
+home_template = env.get_template("index.html")
 post_template = env.get_template('post.html')
 test_template = env.get_template('test.html')
 
@@ -33,19 +33,17 @@ for filename in os.listdir(pages):
         output_path = os.path.join(output_dir, os.path.splitext(filename)[0] + ".html")
         with open(output_path, "w") as html_file:
             html_file.write(rendered_html)
-            print("Created: ", filename)
+            print("Created post: ", filename)
 
-# # Handling index.html
-# for wine in data['wines']:
-#     home_html = home_template.render(data)
-#     #print(home_html)
-#
-#     with open('output/index.html', 'w', encoding="utf-8") as file:
-#         file.write(home_html)
-#
-# # Handling categories.html
-# for wine in data['wines']:
-#     categories_html = home_template.render(data)
-#
-#     with open('output/categories.html', 'w', encoding="utf-8") as file:
-#         file.write(categories_html)
+# Handling index.html
+file_names = []
+
+for filename in os.listdir(pages):
+    #home_html = home_template.render(data)
+
+    output_path = os.path.join(output_dir, "index.html")
+
+    index_rendered = home_template.render(filenames=file_names)
+    with open(output_path, "w") as index_file:
+        index_file.write(index_rendered)
+        print("Print Index: ", pages)
