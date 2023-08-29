@@ -33,6 +33,7 @@ for filename in os.listdir(pages):
         html_filename = os.path.splitext(filename)[0] + ".html"
         with open(html_filename, "w") as html_file:
             html_file.write(rendered_html)
+            print("Created: ", filename)
 
 
 
