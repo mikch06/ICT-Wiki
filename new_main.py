@@ -4,6 +4,7 @@ import json
 import os
 
 pages = "pages"
+output_dir = "web"
 
 env = Environment(
     loader=FileSystemLoader('templates'),
@@ -30,8 +31,9 @@ for filename in os.listdir(pages):
 
         # HTML-Datei speichern
 
-        html_filename = os.path.splitext(filename)[0] + ".html"
-        with open(html_filename, "w") as html_file:
+        output_path = os.path.join(output_dir, os.path.splitext(filename)[0] + ".html")
+        # html_filename = os.path.splitext(filename)[0] + ".html"
+        with open(output_path, "w") as html_file:
             html_file.write(rendered_html)
             print("Created: ", filename)
 
