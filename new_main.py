@@ -11,9 +11,11 @@ env = Environment(
     autoescape=select_autoescape()
 )
 
-home_template = env.get_template("index.html")
+home_template = env.get_template("home.html")
 post_template = env.get_template('post.html')
 test_template = env.get_template('test.html')
+
+file_names = []
 
 
 # Handling posts
@@ -35,15 +37,12 @@ for filename in os.listdir(pages):
             html_file.write(rendered_html)
             print("Created post: ", filename)
 
+        file_names.append(os.path.basename(output_path))
+
 # Handling index.html
-file_names = []
-
 output_path = os.path.join(output_dir, "index.html")
-
-#for filename in os.listdir(pages):
-    #home_html = home_template.render(data)
 
 index_rendered = home_template.render(filenames=file_names)
 with open(output_path, "w") as index_file:
     index_file.write(index_rendered)
-    print("Print Index: ", pages)
+    print("Filenames: ", index_rendered)
