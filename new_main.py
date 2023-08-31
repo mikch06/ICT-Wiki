@@ -41,7 +41,7 @@ for filename in os.listdir(pages):
 
     file_names.append(os.path.basename(output_path))
     title_name = os.path.splitext(filename)[0]
-    print(title_name)
+    print("Title_name: ", title_name)
 
 # Handling index.html
 output_path = os.path.join(output_dir, "index.html")
