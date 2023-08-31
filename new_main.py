@@ -20,27 +20,26 @@ file_names = []
 
 # Handling posts
 for filename in os.listdir(pages):
-    if filename.endswith(".md"):
-        # Markdown-Datei einlesen
-        with open(os.path.join(pages, filename), "r") as file:
-            markdown_text = file.read()
+    # Markdown-Datei einlesen
+    with open(os.path.join(pages, filename), "r") as file:
+        markdown_text = file.read()
 
-        # Change markdown to html
-        html_text = markdown.markdown(markdown_text)
+    # Change markdown to html
+    html_text = markdown.markdown(markdown_text)
 
-        # offprefix = os.path.splitext(filename)[0]
-        # print("Offprefix :", offprefix)
+    # offprefix = os.path.splitext(filename)[0]
+    # print("Offprefix :", offprefix)
 
-        # Render Jinja template
-        rendered_html = post_template.render(page_title=filename, content=html_text)
+    # Render Jinja template
+    rendered_html = post_template.render(page_title=filename, content=html_text)
 
-        # Save html
-        output_path = os.path.join(output_dir, os.path.splitext(filename)[0] + ".html")
-        with open(output_path, "w") as html_file:
-            html_file.write(rendered_html)
-            print("Created post: ", output_path)
+    # Save html
+    output_path = os.path.join(output_dir, os.path.splitext(filename)[0] + ".html")
+    with open(output_path, "w") as html_file:
+        html_file.write(rendered_html)
+        print("Created post: ", output_path)
 
-        file_names.append(os.path.basename(output_path))
+    file_names.append(os.path.basename(output_path))
 
 # Handling index.html
 output_path = os.path.join(output_dir, "index.html")
