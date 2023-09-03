@@ -30,8 +30,12 @@ for filename in os.listdir(pages):
     # offprefix = os.path.splitext(filename)[0]
     # print("Offprefix :", offprefix)
 
+    title_name = os.path.splitext(filename)[0]
+
+
+
     # Render Jinja template
-    rendered_html = post_template.render(page_title=filename, content=html_text)
+    rendered_html = post_template.render(page_title=filename, content=html_text, title_name=title_name)
 
     # Save html
     output_path = os.path.join(output_dir, os.path.splitext(filename)[0] + ".html")
