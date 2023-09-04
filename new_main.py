@@ -17,6 +17,7 @@ test_template = env.get_template('test.html')
 
 # Filename list
 file_names = []
+title_names = []
 
 # Handling posts
 for filename in os.listdir(pages):
@@ -30,12 +31,8 @@ for filename in os.listdir(pages):
     # offprefix = os.path.splitext(filename)[0]
     # print("Offprefix :", offprefix)
 
-    title_name = os.path.splitext(filename)[0]
-
-
-
     # Render Jinja template
-    rendered_html = post_template.render(page_title=filename, content=html_text, title_name=title_name)
+    rendered_html = post_template.render(page_title=filename, content=html_text)
 
     # Save html
     output_path = os.path.join(output_dir, os.path.splitext(filename)[0] + ".html")
@@ -44,11 +41,15 @@ for filename in os.listdir(pages):
         print("Created post: ", output_path)
 
     file_names.append(os.path.basename(output_path))
+
     title_name = os.path.splitext(filename)[0]
-    print("Title_name: ", title_name)
 
 # Handling index.html
 output_path = os.path.join(output_dir, "index.html")
-index_rendered = home_template.render(filenames=file_names)
+index_rendered = home_template.render(filenames=file_names, titlename=title_name)
 with open(output_path, "w") as index_file:
     index_file.write(index_rendered)
+    print("Title-name: ", title_name)
+
+
+
