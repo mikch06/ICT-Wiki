@@ -1,1 +1,1 @@
-/search/pagefind --source web
+ ./pagefind --site ../web
