@@ -6,6 +6,10 @@ import os
 pages = "pages"
 output_dir = "web"
 
+# Create output dir
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
 env = Environment(
     loader=FileSystemLoader('templates'),
     autoescape=select_autoescape()
