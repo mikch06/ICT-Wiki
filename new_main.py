@@ -33,6 +33,11 @@ for filename in os.listdir(pages):
     # Change markdown to html
     html_text = markdown.markdown(markdown_text)
 
+    #md = markdown.Markdown(extensions=['meta'])
+    #md.convert(markdown_text)
+    #print("Metadata:")
+    #print(md.Meta)
+
     # offprefix = os.path.splitext(filename)[0]
     # print("Offprefix :", offprefix)
 
@@ -44,6 +49,8 @@ for filename in os.listdir(pages):
     with open(output_path, "w") as html_file:
         html_file.write(rendered_html)
         print("Created post: ", output_path)
+
+
 
     file_names.append(os.path.basename(output_path))
 
