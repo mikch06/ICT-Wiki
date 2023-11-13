@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # deploy generated html files to web
 set -x
 
