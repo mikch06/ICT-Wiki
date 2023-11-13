@@ -10,6 +10,7 @@ output_dir = "web"
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
+# Jinja environment
 env = Environment(
     loader=FileSystemLoader('templates'),
     autoescape=select_autoescape()
