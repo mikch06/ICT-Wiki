@@ -4,9 +4,6 @@ import shutil
 from pathlib import Path
 import markdown
 from datetime import datetime
-import subprocess
-import re
-
 
 # Filepath
 source = 'pages'
@@ -132,4 +129,7 @@ with open(home, 'w') as f:
     #                 #f.write("<b>{0}</b><br>".format(cat))
 
 
-print("end of script")
+print("Fileconverter has finished")
+
+print("Run search")
+os.system("./search/pagefind --site web")
