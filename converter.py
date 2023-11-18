@@ -4,6 +4,7 @@ import shutil
 from pathlib import Path
 import markdown
 from datetime import datetime
+import subprocess
 import re
 
 
@@ -94,6 +95,7 @@ for file in mdowns:
             f.close()
 
 # Generate File-index / Homepage
+print("Generate index.html")
 home = os.path.join(dest, "index.html")
 path = sorted(os.listdir(dest))
 
@@ -120,11 +122,14 @@ with open(home, 'w') as f:
     f.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(stamp))
     f.write(footer)
 
-    for page in sorted(Path(source).glob('*')):
-        with open(page, "r") as file:
-            patrn = "category"
-            for line in file:
-                if re.findall(patrn, line):
-                    cat = line.split()[2]
-                    print("Category:", cat)
-                    #f.write("<b>{0}</b><br>".format(cat))
+    # for page in sorted(Path(source).glob('*')):
+    #     with open(page, "r") as file:
+    #         patrn = "category"
+    #         for line in file:
+    #             if re.findall(patrn, line):
+    #                 cat = line.split()[2]
+    #                 print("Category:", cat)
+    #                 #f.write("<b>{0}</b><br>".format(cat))
+
+
+print("end of script")
