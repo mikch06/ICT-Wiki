@@ -29,6 +29,9 @@ jobs:
         #python -m pip install --upgrade pip
         pip install markdown
         pip install jinja2
+    - name: Create folder
+      run: |
+          mkdir -p /tmp/foo
     - name: Run the main.py python script!
       run: |
         python main.py
