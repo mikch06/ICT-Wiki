@@ -1,14 +1,9 @@
  - name: SFTP Deploy
-  # You may pin to the exact commit or the version.
   uses: wlixcc/SFTP-Deploy-Action@v1.2.4
   with:
-    # username
     username: 
-    # your sftp server
     server: 
-    # your sftp server port, default to 22
-    port: # default is 22
-    # you can copy private_key from your *.pem file, keep format
+    port:
     ssh_private_key: 
     # will put all file under this path
     local_path: # default is ./*
