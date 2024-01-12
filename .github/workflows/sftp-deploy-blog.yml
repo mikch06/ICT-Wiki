@@ -15,7 +15,7 @@ jobs:
         with:
             username: 'root'
             server: 'your server ip'
-            ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+            ssh_private_key: ${{ secrets.eddsa-key-20240112 }} 
             local_path: './static/*'
             remote_path: '/var/www/app'
             sftpArgs: '-o ConnectTimeout=5'
