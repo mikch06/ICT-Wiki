@@ -10,9 +10,9 @@ jobs:
         - name: deploy file
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-            username: 'root'
-            server: 'your server ip'
+            username: 'mikcyons'
+            server: 'kissel.ch'
             ssh_private_key: ${{ secrets.SFTP_TRANSFER }} 
-            local_path: './static/*'
-            remote_path: '/var/www/app'
+            local_path: './web/*'
+            remote_path: '/home/mikcyons/www/kissel.ch/test'
             sftpArgs: '-o ConnectTimeout=5'
