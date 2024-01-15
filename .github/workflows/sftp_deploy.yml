@@ -15,7 +15,7 @@ jobs:
       with:
         username: 'mikcyons'
         server: 'kissel.ch'
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+        ssh_private_key: ${{ secrets.SFTP_TRANSFER }} 
         local_path: './foo/*'
         remote_path: '/home/mikcyons/www/kissel.ch/test'
         sftpArgs: '-o ConnectTimeout=5'
