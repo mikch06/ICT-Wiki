@@ -20,3 +20,4 @@ jobs:
         remote_path: '/home/mikcyons/www/kissel.ch/test'
         sftpArgs: '-o ConnectTimeout=5'
 
+test
