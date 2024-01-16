@@ -10,12 +10,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: deploy file
+    - name: Deploy HTML Files
       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
         username: 'mikcyons'
         server: 'kissel.ch'
         ssh_private_key: ${{ secrets.SFTP_TRANSFER }} 
-        local_path: './foo/*'
+        local_path: './web/*'
         remote_path: '/home/mikcyons/www/kissel.ch/test'
         sftpArgs: '-o ConnectTimeout=5'
