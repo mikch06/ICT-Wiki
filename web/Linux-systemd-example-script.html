@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #eee;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 800px;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 10px;
+}
+
+#search {
+max-width: 50%;
+}
+</style>
+</head>
+<body>
+<a href="index.html">back</a><h1>Systemd: Example service script</h1>
+<!-- date: 2020-05-25 00:00:00 -->
+<!-- category: linux -->
+<!-- tags: linux, systemd -->
+<p>Example service script:<br>
+e.g. daphne application server with a django app.</p>
+<pre># vi /etc/systemd/system/daphne.service</pre>
+<pre>[Unit]
+Description=daphne service to run django application
+After=network.target
+After=nginx.service
+
+[Service]
+Type=simple
+User=mik
+Group=mik
+WorkingDirectory=/opt/app/
+ExecStart=/opt/app/wine-env/bin/daphne djangoapp.asgi:application
+ExecStop=/bin/kill -s TERM $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target</pre>
+<p></body>
+</html></p>
+<body>
+</html>

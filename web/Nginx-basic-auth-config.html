@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #eee;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 800px;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 10px;
+}
+
+#search {
+max-width: 50%;
+}
+</style>
+</head>
+<body>
+<a href="index.html">back</a><h1>Nginx Basic Auth config</h1>
+<!-- date: 2020-04-05 00:00:00 -->
+<!-- category: nginx -->
+<!-- tags: nginx, Basic Auth, Linux -->
+<hr />
+<p>Configure location:</p>
+<pre><code>    location / {
+    auth_basic "closed site";
+    auth_basic_user_file htpasswd;
+    }
+</code></pre>
+<p>Create password file:</p>
+<pre><code>yum install httpd-tools&lt;/pre&gt;
+</code></pre>
+<p>New file:</p>
+<pre><code>htpasswd -c htpasswd-file "username"
+</code></pre>
+<p>New password:</p>
+<p>Append user to existing file:</p>
+<pre><code>htpasswd htpasswd-file "username"
+</code></pre>
+<body>
+</html>

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #eee;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 800px;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 10px;
+}
+
+#search {
+max-width: 50%;
+}
+</style>
+</head>
+<body>
+<a href="index.html">back</a><h1>Homeassistant config</h1>
+<!-- date: 2023-02-01 00:00:00 -->
+<!-- category: homeassistant -->
+<!-- tags: homeassistant -->
+
+<h1>Add-ons</h1>
+<h2>deConz add-on</h2>
+<p>deConz -&gt; config</p>
+<p>Options:</p>
+<p>use serial connection:
+/dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2651844-if00</p>
+<h2>NGINX Home Assistant SSL proxy add-on</h2>
+<p>no special config needed</p>
+<p>but</p>
+<p>upload cert and privkey file</p>
+<p>-&gt; that's why you have to use the 
+Terminal&amp;SSH add-on</p>
+<h1>Geräte&amp;Dienste / Integration</h1>
+<ul>
+<li>Integration hinzufügen</li>
+<li>deConz</li>
+<li>Take ipaddress and port -&gt; for that check API information in deConz Gateway (go by add-on)</li>
+</ul>
+<p><img alt="deconz-gateway-config.png" src="https://kissel.ch/ict/images/deconz-gateway-config.png" /></p>
+<body>
+</html>

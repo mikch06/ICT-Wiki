@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICT Wiki</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+body, html  {
+background-color: #eee;
+margin: 10px;
+}
+
+pre {
+  display: block;
+  color: white;
+  background-color: black;
+  max-width: 800px;
+  min-width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1  {
+font-size: 26px;
+}
+
+a   {
+text-decoration: none;
+}
+#stamp  {
+font-size: 10px;
+}
+
+#search {
+max-width: 50%;
+}
+</style>
+</head>
+<body>
+<a href="index.html">back</a><h1>How to clear blocked IP list</h1>
+<!-- date: 2015-09-03 00:00:00 -->
+<!-- category: synology -->
+<!-- tags: Synology, IP block -->
+<hr />
+<p>Login to your NAS by ssh:</p>
+<p>May take a backup from the autoblock databse:</p>
+<pre><code>cp /etc/synoautoblock.db
+/etc/synoautoblock.db.bak
+</code></pre>
+<p>Change to database sqlite mode:</p>
+<pre><code>sqlite3 "Enter"
+open the database:
+sqlite&gt; .open /etc/synoautoblock.db
+</code></pre>
+<p>Show tables:</p>
+<pre><code>sqlite&gt; .tables
+&gt; AutoBlockIP
+</code></pre>
+<p>Show all entries:</p>
+<pre><code>sqlite&gt; select * from AutoBlockIP;
+</code></pre>
+<p>Delete all entries from database:    </p>
+<pre><code>sqlite&gt; delete from AutoBlockIP;
+</code></pre>
+<p>Show all entries again:</p>
+<pre><code>sqlite&gt; select * from AutoBlockIP;
+</code></pre>
+<p>Delete a single entry:</p>
+<pre><code>sqlite&gt; delete from AutoBlockIP where IP = "192.168.2.12";
+</code></pre>
+<p>Leave sqlite</p>
+<body>
+</html>
