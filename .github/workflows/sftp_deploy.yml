@@ -19,4 +19,3 @@ jobs:
         local_path: './web/*'
         remote_path: '/home/mikcyons/www/kissel.ch/test'
         sftpArgs: '-o ConnectTimeout=5'
-        delete_remote_files: true
