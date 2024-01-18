@@ -56,7 +56,7 @@ max-width: 50%;
 </head>
 <body>
 """
-back = "<a href=\"index.html\">back</a>"
+back = "<a href=\"index.html\">Back</a>"
 
 footer = "\n<body>\n</html>"
 
@@ -108,6 +108,7 @@ homepage = """
 </script>
 """
 
+# Loop articles for page index
 with open(home, 'w') as f:
     f.write(header)
     f.write(homepage)
