@@ -1,7 +1,9 @@
 ---
-date: 2010-12-03 00:00:00
-category: centos
-tags: centos, fail2ban
+date: "2010-12-03 00:00:00"
+category: "centos"
+tags: 
+  - "centos"
+  - "fail2ban"
 ---
 # CentOS Linux fail2ban
 
