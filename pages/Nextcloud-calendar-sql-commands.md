@@ -1,7 +1,8 @@
 # Nextcloud calendar SQL commands
-<!-- date: 2020-09-03 00:00:00 -->
-<!-- category: nextcloud -->
-<!-- tags: Nextcloud -->
+--- 
+date: 2020-09-03 00:00:00
+category: nextcloud
+tags: Nextcloud
 ***
 Nextcloud: Use Nextcloud with SQL commands
 

@@ -1,7 +1,8 @@
 #Joomla! Admin Passwort reset
-<!-- date: 2015-09-08 00:00:00 -->
-<!-- category: joomla -->
-<!-- tags: Joomla, password reset -->
+--- 
+date: 2015-09-08 00:00:00
+category: joomla
+tags: Joomla, password reset
 ***
 Lost the admin password of your Joomla! page or have no possibility to login on backend?
 

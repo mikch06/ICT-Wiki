@@ -1,7 +1,8 @@
 #VirtualBox KnowHow
-<!-- date: 2015-10-16 00:00:00 -->
-<!-- category: virtualbox -->
-<!-- tags: VirtualBox -->
+--- 
+date: 2015-10-16 00:00:00
+category: virtualbox
+tags: VirtualBox
 ***
 Install Virtual Box Extension Pack:<br>
 <br>

@@ -1,7 +1,8 @@
 # How to clear blocked IP list
-<!-- date: 2015-09-03 00:00:00 -->
-<!-- category: synology -->
-<!-- tags: Synology, IP block -->
+--- 
+date: 2015-09-03 00:00:00
+category: synology
+tags: Synology, IP block
 ***
 Login to your NAS by ssh:
 

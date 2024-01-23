@@ -1,7 +1,8 @@
 # MariaDB Installation on CentsOS7
-<!-- date: 2015-09-17 00:00:00 -->
-<!-- category: centos -->
-<!-- tags: centos, mariadb, mysql -->
+--- 
+date: 2015-09-17 00:00:00
+category: centos
+tags: centos, mariadb, mysql
 
 Setup a Maria DB Server on CentOS7:
     <pre>yum -y install mariadb-server mariadb

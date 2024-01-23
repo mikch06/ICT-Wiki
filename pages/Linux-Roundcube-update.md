@@ -1,7 +1,8 @@
 # Roundcube update
-<!-- date: 2020-03-08 00:00:00 -->
-<!-- category: linux -->
-<!-- tags: Roundcube -->
+--- 
+date: 2020-03-08 00:00:00
+category: linux
+tags: Roundcube
 
 <p>Download new roundcube version <strong>(complete package)</strong> from <a href="https://roundcube.net/download">https://roundcube.net/download</a> website or github:</p>
 <pre>wget https://github.com/roundcube/roundcubemail/releases/download/1.4.3/roundcubemail-1.4.3-complete.tar.gz</pre>

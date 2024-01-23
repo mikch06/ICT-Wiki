@@ -1,7 +1,10 @@
+--- 
+date: 2020-08-17 00:00:00
+category: linux
+tags: entos, linux
+---
 # CentOS8: Operations
-<!-- date: 2020-08-17 00:00:00 -->
-<!-- category: linux -->
-<!-- tags: entos, linux -->
+
 ***
 ### Restart Networking:
 

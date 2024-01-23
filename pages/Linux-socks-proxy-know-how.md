@@ -1,7 +1,8 @@
 # SOCKS(5) Proxy Know How
-<!-- date: 2020-07-15 00:00:00 -->
-<!-- category: linux -->
-<!-- tags: linux, socks5, putty, foxyproxy -->
+--- 
+date: 2020-07-15 00:00:00
+category: linux
+tags: linux, socks5, putty, foxyproxy
 ***
 
 

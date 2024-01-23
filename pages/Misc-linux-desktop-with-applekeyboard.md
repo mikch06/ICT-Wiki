@@ -1,7 +1,8 @@
 # Linux Desktop with Apple Keyboard
-<!-- date: 2015-01-01 00:00:00 -->
-<!-- category: linux -->
-<!-- tags:  -->
+--- 
+date: 2015-01-01 00:00:00
+category: linux
+tags: 
 ***
 I like to have < > ° etc. in a correct way of use on my keyboard. <br><br>
     Usage:

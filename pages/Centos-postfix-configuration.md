@@ -1,7 +1,10 @@
 # CentOS Postfix Configuration
-<!-- date: 2017-04-22 00:00:00 -->
-<!-- category: centos -->
-<!-- tags: centos, linux -->
+--- 
+date: 2017-04-22 00:00:00
+category: centos
+tags: centos, linux
+---
+
 ***
 
 Scenario: Homeserver should send e-mails by your ISP-hosted domain:

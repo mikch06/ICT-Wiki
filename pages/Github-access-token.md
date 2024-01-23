@@ -1,7 +1,8 @@
 # Github access tokens
-<!-- date: 2022-10-26 00:00:00 -->
-<!-- category: linux -->
-<!-- tags: github -->
+--- 
+date: 2022-10-26 00:00:00
+category: linux
+tags: github
 ***
 
 Repo usage with username and password on github is deprecated.

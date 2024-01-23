@@ -1,7 +1,8 @@
 # Linux OpenSSL commands
-<!-- date: 2017-02-11 00:00:00 -->
-<!-- category: linux -->
-<!-- tags: openssl, cert, key -->
+--- 
+date: 2017-02-11 00:00:00
+category: linux
+tags: openssl, cert, key
 ***
 Check a certificate
 

@@ -1,7 +1,8 @@
 # Lenovo Thinkpad Trackpoint Scrolling on Linux (debian derivatives)
-<!-- date: 2016-07-22 00:00:00 -->
-<!-- category: linux -->
-<!-- tags: Lenovo, Thinkpad, Trackpoint, Scrolling -->
+--- 
+date: 2016-07-22 00:00:00
+category: linux
+tags: Lenovo, Thinkpad, Trackpoint, Scrolling
 
 How to configure Linux to use Trackpoint Scrolling on Lenovo Thinkpads:
 <br><br>

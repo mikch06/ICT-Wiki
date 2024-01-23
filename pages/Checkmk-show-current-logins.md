@@ -1,7 +1,8 @@
 # Checkmk: Show current logins
-<!-- date: 2020-06-16 00:00:00 -->
-<!-- category: checkmk -->
-<!-- tags: checkmk, plugins -->
+--- 
+date: 2020-06-16 00:00:00
+category: checkmk
+tags: checkmk, plugins
 ***
 ### Linux
     #!/bin/bash

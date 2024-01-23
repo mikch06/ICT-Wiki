@@ -1,7 +1,8 @@
 #  Homeassistant config
-<!-- date: 2023-02-01 00:00:00 -->
-<!-- category: homeassistant -->
-<!-- tags: homeassistant -->
+--- 
+date: 2023-02-01 00:00:00
+category: homeassistant
+tags: homeassistant
 
 # Add-ons
 ## deConz add-on

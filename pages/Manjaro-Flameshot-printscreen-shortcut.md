@@ -1,7 +1,8 @@
 # Flameshot with Printscreen Shortcut on Manjaro
-<!-- date: 2020-08-26 00:00:00 -->
-<!-- category: manjaro -->
-<!-- tags: Manjaro, Linux, Flameshot -->
+--- 
+date: 2020-08-26 00:00:00
+category: manjaro
+tags: Manjaro, Linux, Flameshot
 ***
 
 ![](https://kissel.ch/ict/images/flameshot_logo.svg) Flameshot screenshot software<br>

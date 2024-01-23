@@ -1,7 +1,8 @@
 # Opnsense acme-client
-<!-- date: 2023-07-20 00:00:00 -->
-<!-- category: opnsense -->
-<!-- tags: opnsense, certs-->
+--- 
+date: 2023-07-20 00:00:00
+category: opnsense
+tags: opnsense, certs-->
 
 ## Acme client, let's encrypt
 

@@ -1,7 +1,10 @@
+--- 
+date: 2020-06-03 00:00:00
+category: centos
+tags: centos, linux, networking, nmcli
+---
+
 # CentOS8: nmcli examples
-<!-- date: 2020-06-03 00:00:00 -->
-<!-- category: centos -->
-<!-- tags: centos, linux, networking, nmcli -->
 ***
 Config ip address on interface:
 

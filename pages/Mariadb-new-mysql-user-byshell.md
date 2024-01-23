@@ -1,7 +1,8 @@
 #MySQL Create new MySQL user by shell
-<!-- date: 2015-09-08 00:00:00 -->
-<!-- category: MySQL -->
-<!-- tags: centos, mariadb, mysql, user, shell -->
+--- 
+date: 2015-09-08 00:00:00
+category: MySQL
+tags: centos, mariadb, mysql, user, shell
 ***
 Set a new user with access from a remote host:
 

@@ -1,7 +1,8 @@
 # Systemd
-<!-- date: 2017-01-11 00:00:00 -->
-<!-- category: linux -->
-<!-- tags: linux, systemd, systemctl -->
+--- 
+date: 2017-01-11 00:00:00
+category: linux
+tags: linux, systemd, systemctl
 ***
 
 
