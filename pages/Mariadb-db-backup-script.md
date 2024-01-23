@@ -1,8 +1,10 @@
-# MariaDB backup script
 --- 
 date: 2010-09-07 00:00:00
 category: MariaDB
 tags: mariadb, mysql, backup, linux
+---
+# MariaDB backup script
+
     WORKDIR=/home/bak
     DB=<Datenbankname>
     USER=<Username>

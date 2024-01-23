@@ -1,9 +1,9 @@
-# Init7 - Hybrid7 connection with Opnsense Firewall
 --- 
 date: 2020-07-17 00:00:00
 category: opnsense
 tags: Init7, Hybrid7
-***
+---
+# Init7 - Hybrid7 connection with Opnsense Firewall
 
 If you're using <a href="https://www.init7.net">Init7</a> - Hybrid7 you have to configure pppoe Authentication and VLAN tagging:<br><br>
 <b>Opnsense config step by step:</b>

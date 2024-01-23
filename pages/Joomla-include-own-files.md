@@ -1,8 +1,10 @@
-# Integrate own files in Joomla
 --- 
 date: 2015-09-24 00:00:00
 category: joomla
 tags: Joomla
+---
+# Integrate own files in Joomla
+
 Put the following code to the own Joomla files to integrate them to the CMS. After that you can include them by a wrapper.
 
     php

@@ -1,10 +1,9 @@
-# SOCKS(5) Proxy Know How
 --- 
 date: 2020-07-15 00:00:00
 category: linux
 tags: linux, socks5, putty, foxyproxy
-***
-
+---
+# SOCKS(5) Proxy Know How
 
 <h3>SOCKS Proxy with Putty and FoxyProxy:</h3>
 ![](https://kissel.ch/ict/images/putty-socks5-config1.png)

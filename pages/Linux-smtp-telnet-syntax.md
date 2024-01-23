@@ -1,10 +1,9 @@
-# Smtp telnet syntax
 --- 
 date: 2015-09-15 00:00:00
 category: linux
 tags: linux, smtp, telnet
-***
-
+---
+# Smtp telnet syntax
 
     telnet <MAILSERVER> 25
 

@@ -1,8 +1,10 @@
-# Systemd: Example service script
 --- 
 date: 2020-05-25 00:00:00
 category: linux
 tags: linux, systemd
+---
+# Systemd: Example service script
+
 Example service script:<br>
 e.g. daphne application server with a django app.
 <pre># vi /etc/systemd/system/daphne.service</pre>

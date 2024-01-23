@@ -1,8 +1,10 @@
- # Linux Daily admin commands</h2>
 --- 
 date: 2015-09-15 00:00:00
 category: linux
 tags: linux, postfix, mailx, mailq, postqueue
+---
+ # Linux Daily admin commands</h2>
+
 Postfix:
 
     mailq                 # show queue

@@ -1,8 +1,9 @@
-# Synology certificates
 --- 
 date: 2018-01-06 00:00:00
 category: Synology
 tags: Synology,certs,tls
+---
+# Synology certificates
 
 Is it possible to change certificates for the file stations and synology ui by shell?<br><br>
 Yes, it is.<br><br>
