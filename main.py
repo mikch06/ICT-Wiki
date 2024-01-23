@@ -120,16 +120,6 @@ with open(home, 'w') as f:
     f.write("<br><br><div id=\"stamp\">Last generated: {}</div>".format(stamp))
     f.write(footer)
 
-    # for page in sorted(Path(source).glob('*')):
-    #     with open(page, "r") as file:
-    #         patrn = "category"
-    #         for line in file:
-    #             if re.findall(patrn, line):
-    #                 cat = line.split()[2]
-    #                 print("Category:", cat)
-    #                 #f.write("<b>{0}</b><br>".format(cat))
-
-
 print("Fileconverter has finished")
 
 print("Run search")
