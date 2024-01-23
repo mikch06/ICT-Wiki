@@ -1,11 +1,10 @@
-# CentOS7 to CentOS8 in place Upgrade
 --- 
 date: 2020-09-17 00:00:00
 category: centos
 tags: Centos, Linux
 ---
+# CentOS7 to CentOS8 in place Upgrade
 
-***
 #<q>DRAFT</q>
 
 <h3>Update procedure</h3>

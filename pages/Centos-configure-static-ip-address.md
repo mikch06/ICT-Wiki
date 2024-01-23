@@ -1,10 +1,11 @@
-#Configure static IP address
 --- 
 date: 2015-09-09 00:00:00
 category: centos
 tags: centos, linux, ip, addr
 ---
-***
+
+# Configure static IP address
+
 Position of the interface configuration files:
 
     /etc/sysconfig/network-scripts

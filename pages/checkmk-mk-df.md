@@ -1,9 +1,10 @@
-# Checkmk: Show current logins
 --- 
 date: 2023-05-09 00:00:00
 category: checkmk
 tags: checkmk, plugins
-***
+---
+# Checkmk: Show current logins
+
 ### Linux
 
     # Check disk free

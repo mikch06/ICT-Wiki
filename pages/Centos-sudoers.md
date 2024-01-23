@@ -1,11 +1,10 @@
-# Sudoers
 --- 
 date: 2015-12-23 00:00:00
 category: centos
 tags: CentOS, Linux, sudo
 ---
+# Sudoers
 
-***
 To give a user rights on a root privileged command:
     
     vi /etc/sudoers

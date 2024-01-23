@@ -1,11 +1,11 @@
-# Mount nfs share
 --- 
 date: 2015-09-07 00:00:00
 category: centos
 tags: linux, nfs, mount, fstab
 ---
 
-***
+# Mount nfs share
+
 1. Setup NFS Client:
 
     
