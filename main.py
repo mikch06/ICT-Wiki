@@ -79,6 +79,12 @@ for file in mdowns:
         html = markdown.markdown(text)
         print("read", file)
 
+        md = markdown.Markdown(extenstion=['meta'])
+        foo = md.convert(text)
+        print("meta: ", foo)
+        
+        #print(md.meta)
+
         newfile = os.path.split(file)[1]
         newfile = os.path.splitext(newfile)[0]
         newfile = newfile + ".html"
