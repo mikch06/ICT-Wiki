@@ -15,4 +15,11 @@ or: Github -> Settings -> Developer Settings -> Personal access tokens -> Tokens
 
 
     git config credential.helper store
+    (store is example)
+
+    after that:
+
+    git push
+
+    Login with username and Token!
 
