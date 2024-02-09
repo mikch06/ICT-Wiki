@@ -1,5 +1,5 @@
 --- 
-date: 2010-12-03 00:00:00
+date: 2024-01-22 00:00:00
 category: foocat
 tags: ["foo", "linux", "computers"]
 ---
